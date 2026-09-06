@@ -115,7 +115,7 @@ Every card carries `data-window="7"` or `="30"`.
 - **Classify by most-recently-surfaced date** — the via/newsletter date on a two-tag card, the org date otherwise. Not the original publish date.
 - **Recompute every existing card before pulling anything new**: delete cards now before the 30-day floor; roll `7`→`30` for cards now before the 7-day floor.
 - A card can roll *back* into the 7-day window if a newsletter re-covers it with genuinely new information — add a second via-tag and fold the new information into the body.
-- Update the `RANGES` object at the top of the `<script>` block (**not** a `#window-range` span — that id was removed in the 6 Sep redesign; the range now renders into `#snapshot-range` and `#pinned-range` automatically from `RANGES[days]`), plus the footer Window paragraph's pull date and the footer Newsletters list.
+- Update the `RANGES` object at the top of the `<script>` block (**not** a `#window-range` span — that id was removed in the 6 Sep redesign; the range now renders into `#snapshot-range` automatically from `RANGES[days]`. The `#pinned-range` target was removed 7 Sep 2026 along with the whole pinned mini-header — don't reintroduce a reference to it), plus the footer Window paragraph's pull date and the footer Newsletters list.
 
 ---
 
@@ -206,7 +206,7 @@ GitHub Pages serves `main` at the repo root. `CNAME` holds the custom domain —
 
 Palette, layout, typography and card structure are settled and have been iterated on heavily. A refresh adds and removes **cards**; it does not restyle the page.
 
-**Redesigned 6 Sep 2026** — the page is now a light-only blurple-accent theme (ported from a Nocturne-style Design Canvas export), with a large stacked hero headline, a sticky "pinned" mini-header that appears once you scroll past the hero, sticky per-group and per-topic headers, and a two-column layout (sticky left-rail category label + right-hand content) inside each `<section class="group">`. There is no dark-mode variant — don't add one speculatively.
+**Redesigned 6 Sep 2026** — the page is now a light-only blurple-accent theme (ported from a Nocturne-style Design Canvas export), with a large stacked hero headline, sticky per-group and per-topic headers, and a two-column layout (sticky left-rail category label + right-hand content) inside each `<section class="group">`. There is no dark-mode variant — don't add one speculatively. **The page originally also had a sticky "pinned" mini-header that faded in at the top of the viewport once you scrolled past the hero (showing category/topic/date-range) — the user disliked it and it was removed entirely on 7 Sep 2026** (markup, CSS, and its scroll-listener JS all deleted, along with the now-dead `hero-anchor` id). Don't reintroduce it.
 
 - All colour is a plain hex value tokenised in `:root` (this design is not OKLCH — it was ported directly from the provided source; don't convert it back without being asked).
 - Cards are `<article class="card">` with an `<h4>` title and a `.mark` line indicator (see §3) — not the old `<div class="card">`/`<h3>`/`.card-mark` emoji structure.

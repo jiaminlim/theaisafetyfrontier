@@ -106,7 +106,7 @@ h1.display .headline .word { position: relative; }
 
 
 .meta-row {
-  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 34px;
+  display: flex; flex-wrap: wrap; align-items: flex-start; gap: 34px;
   padding: 26px 0 24px;
   border-top: 1px solid var(--n300);
   border-bottom: 1px solid var(--n300);
@@ -188,7 +188,7 @@ h1.display .headline .word { position: relative; }
 .group-inner-wrap { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; }
 
 .group { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 28px; }
-.group-rail { flex: 0 0 150px; position: sticky; top: 58px; align-self: flex-start; }
+.group-rail { flex: 0 0 150px; min-width: 0; position: sticky; top: 58px; align-self: flex-start; }
 .group-rail h2 {
   margin: 0; font-family: var(--font-display); font-weight: 500;
   font-size: clamp(24px, 2.6vw, 32px); line-height: 1.05; letter-spacing: -0.03em;
@@ -197,6 +197,11 @@ h1.display .headline .word { position: relative; }
 .group-body { flex: 1 1 300px; min-width: 0; }
 .group-note { margin: 0 0 22px; max-width: 70ch; font-size: 14.5px; line-height: 1.6; color: var(--n800); }
 .group-divider { height: 1px; background: linear-gradient(to right, var(--accent-300) 0%, rgba(89,93,108,0.24) 40%, transparent 92%); }
+
+.scroll-mask {
+  position: fixed; top: 0; left: 0; right: 0; height: 58px;
+  background: var(--bg); z-index: 25; pointer-events: none;
+}
 
 .topic { padding: 36px 0 8px; scroll-margin-top: 66px; }
 .topic-head {
@@ -277,8 +282,11 @@ footer.notes {
   .wrap { padding: 0 18px 80px; }
   .group-rail { position: static; flex-basis: 100%; }
   .topic-head { top: 0; }
+  .scroll-mask { height: 0; }
 }
 </style>
+
+<div class="scroll-mask" aria-hidden="true"></div>
 
 <div class="wrap">
 

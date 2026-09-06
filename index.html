@@ -70,30 +70,6 @@ a { color: inherit; }
   padding: 0 28px 110px;
 }
 
-/* pinned bar — shown once the header has scrolled past */
-.pinned {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 50;
-  background: var(--bg);
-  border-bottom: 1px solid var(--n300);
-  transform: translateY(-100%);
-  transition: transform 0.18s var(--ease-out);
-}
-.pinned.is-visible { transform: translateY(0); }
-.pinned-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 11px 28px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.pinned-bar { width: 24px; height: 3px; border-radius: 999px; background: var(--accent); flex-shrink: 0; }
-.pinned-label { font-family: var(--font-display); font-size: 15px; letter-spacing: -0.02em; white-space: nowrap; }
-.pinned-topic { font-size: 12.5px; color: var(--n700); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.pinned-range { margin-left: auto; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--n700); white-space: nowrap; }
-
 .snapshot-row {
   position: relative;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -304,22 +280,13 @@ footer.notes {
 }
 </style>
 
-<div class="pinned" id="pinned">
-  <div class="pinned-inner">
-    <span class="pinned-bar"></span>
-    <span class="pinned-label" id="pinned-label"></span>
-    <span class="pinned-topic" id="pinned-topic"></span>
-    <span class="pinned-range" id="pinned-range"></span>
-  </div>
-</div>
-
 <div class="wrap">
 
   <div class="snapshot-row">
     <span>Snapshot · <span id="snapshot-range">30 Aug–5 Sep 2026</span></span>
   </div>
 
-  <header class="hero" id="hero-anchor" data-nav="hero">
+  <header class="hero">
     <h1 class="display">
       <span class="lede">The AI Safety</span>
       <span class="headline"><span class="swatch"></span><span class="word">Frontier</span></span>
@@ -966,8 +933,6 @@ footer.notes {
     var range = RANGES[days];
     var snap = document.getElementById('snapshot-range');
     if (snap) snap.textContent = range;
-    var pr = document.getElementById('pinned-range');
-    if (pr) pr.textContent = range;
     render();
   }
 
@@ -1034,43 +999,6 @@ footer.notes {
     var countEl = document.getElementById('dev-count');
     if (countEl) countEl.textContent = String(visibleCount);
   }
-
-  (function () {
-    var pinned = document.getElementById('pinned');
-    var pinnedLabel = document.getElementById('pinned-label');
-    var pinnedTopic = document.getElementById('pinned-topic');
-    var raf = null;
-
-    function onScroll() {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        raf = null;
-        var groupEls = document.querySelectorAll('.group[data-nav]');
-        var topicEls = document.querySelectorAll('.topic[data-nav]');
-        var activeGroupLabel = '';
-        var activeTopicLabel = '';
-        groupEls.forEach(function (el) {
-          if (el.getBoundingClientRect().top <= 140) {
-            var h2 = el.querySelector('.group-rail h2');
-            activeGroupLabel = h2 ? h2.textContent : '';
-          }
-        });
-        topicEls.forEach(function (el) {
-          if (el.getBoundingClientRect().top <= 140) {
-            var h3 = el.querySelector('.topic-head h3');
-            activeTopicLabel = h3 ? h3.textContent : '';
-          }
-        });
-        var hero = document.getElementById('hero-anchor');
-        var isPinned = hero && hero.getBoundingClientRect().bottom < 48;
-        pinned.classList.toggle('is-visible', !!isPinned);
-        pinnedLabel.textContent = activeGroupLabel;
-        pinnedTopic.textContent = activeTopicLabel;
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
 
   setWindow(7);
 </script>

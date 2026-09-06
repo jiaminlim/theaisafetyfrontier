@@ -31,21 +31,25 @@ Five subtopics — **Technical & Institutional Challenges**, **Risk Management P
 
 ---
 
-## 3. The 💥 / 🧐 marker
+## 3. The event/study marker
 
-Every card carries one emoji in the top-right of its title row, marking which side of its subcategory's split it falls on:
+**Redesigned 6 Sep 2026** — the marker is no longer an emoji. Every card opens with a short horizontal line above its title, marking which side of its subcategory's split it falls on:
 
 ```html
-<div class="card-title-row">
-  <h3>Title</h3>
-  <span class="card-mark" title="Incidents">💥</span>
-</div>
+<article class="card" data-window="7" id="...">
+  <span class="mark mark-event" title="Incidents"></span>
+  <h4>Title</h4>
+  <p>...</p>
+  <div class="tags">...</div>
+</article>
 ```
 
-- **💥 = something happened.** `title` is `Demonstrations` (Capabilities), `Incidents` (Risks), or `Implementation` (Risk Management).
-- **🧐 = something was studied.** `title` is `Research` in all three supergroups.
+- **`mark-event` (solid accent-coloured line) = something happened.** `title` is `Demonstrations` (Capabilities), `Incidents` (Risks), or `Implementation` (Risk Management).
+- **`mark-study` (dashed neutral line) = something was studied.** `title` is `Research` in all three supergroups.
 
-The key is stated **once**, in the header meta row. Never restate it in supergroup notes, subtopic notes or the footer.
+Cards are `<article class="card">`, not `<div>`, and the title is an `<h4>`, not an `<h3>` inside a `.card-title-row` — that wrapper no longer exists. The classification logic underneath (what counts as an event vs a study) is unchanged from the rules below; only the visual marker and card tag names changed.
+
+The key is stated **once**, in the header meta row ("Reading the marks"). Never restate it in supergroup notes, subtopic notes or the footer.
 
 **Tests:**
 - *Capabilities* — a one-off striking result from a specific instance → 💥 Demonstrations; a formal, repeatable, usually named benchmark → 🧐 Research. Both require external/independent validation.
@@ -111,7 +115,7 @@ Every card carries `data-window="7"` or `="30"`.
 - **Classify by most-recently-surfaced date** — the via/newsletter date on a two-tag card, the org date otherwise. Not the original publish date.
 - **Recompute every existing card before pulling anything new**: delete cards now before the 30-day floor; roll `7`→`30` for cards now before the 7-day floor.
 - A card can roll *back* into the 7-day window if a newsletter re-covers it with genuinely new information — add a second via-tag and fold the new information into the body.
-- Update the header `#window-range` span **and** both strings inside `setWindow()`, plus the footer Window paragraph's pull date and the footer Newsletters list.
+- Update the `RANGES` object at the top of the `<script>` block (**not** a `#window-range` span — that id was removed in the 6 Sep redesign; the range now renders into `#snapshot-range` and `#pinned-range` automatically from `RANGES[days]`), plus the footer Window paragraph's pull date and the footer Newsletters list.
 
 ---
 
@@ -153,22 +157,23 @@ Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the
 
 ## 10. Validation — run before every commit
 
+**Redesigned 6 Sep 2026** — cards are now `<article class="card">` and titles are `<h4>`, not `<div class="card">`/`<h3>`. Update this script if either changes again.
+
 ```bash
 python3 - <<'PY'
 import re
 c=open('index.html').read()
-assert len(re.findall(r'<div\b',c))==c.count('</div>'), 'div imbalance'
-assert len(re.findall(r'<p[ >]',c))==c.count('</p>'), 'p imbalance'
-assert c.count('<span')==c.count('</span>'), 'span imbalance'
-assert c.count('<section')==c.count('</section>'), 'section imbalance'
+for tag in ['div','p','span','section','article','h4']:
+    o=len(re.findall(rf'<{tag}[ >]',c)); cl=c.count(f'</{tag}>')
+    assert o==cl, f'{tag} imbalance: {o} open vs {cl} close'
 ids=set(re.findall(r'id="([^"]+)"',c))
 dead=[x for x in re.findall(r'href="#([^"]+)"',c) if x not in ids]
 assert not dead, f'dead anchors: {dead}'
-t=re.findall(r'<h3>([^<]*)</h3>',c)
+t=re.findall(r'<h4>([^<]*)</h4>',c)
 dup={x for x in t if t.count(x)>1}
 assert not dup, f'duplicate titles: {dup}'
-n=c.count('<div class="card" data-window')
-assert n==c.count('class="card-mark"'), 'every card needs exactly one marker'
+n=c.count('<article class="card"')
+assert n==c.count('class="mark '), 'every card needs exactly one marker'
 print(f'OK — {n} cards')
 PY
 ```
@@ -176,8 +181,8 @@ PY
 **Then verify placement by printing each card under its subtopic** — not just counting. A move-type edit can relocate cards between supergroups while every count still matches.
 
 ### Two bugs that have actually happened — don't repeat them
-- **`html.index('data-topic="x"')` matches the CSS selector block, not the section.** The `<style>` block contains `[data-topic="resilience"]` etc. *before* any markup. Always anchor on the full opening tag `<div class="subtopic" data-topic="x">`.
-- **A subtopic's span must end at `min(next subtopic, its section's `</section>`)`.** Using only "next subtopic, else `</section>`" over-captures the *last* subtopic in a section and swallows the section boundary — this moved an entire subtopic into the wrong supergroup.
+- **`html.index('data-topic="x"')` matched the CSS selector block, not the section**, back when subtopics used `data-topic`. The redesign renamed that attribute to `data-nav` on `<div class="topic" data-nav="x" id="x">` (both group and topic wrappers use `data-nav` now) — but the same class of bug applies to *any* attribute-value lookup: if the value also appears in a CSS selector earlier in the file, a plain string search finds the wrong occurrence. Anchor on the full opening tag, not just the attribute.
+- **A topic's or group's span must end at `min(next sibling, its parent's actual closing tag)`**, found via depth-balanced div matching — not a naive "next occurrence of `</div>`", which over-captures nested content. Using only "next sibling, else end-of-file" over-captures the *last* item in a group and can swallow the group boundary, moving cards into the wrong supergroup.
 
 Take a file copy before any bulk structural rewrite.
 
@@ -199,6 +204,9 @@ GitHub Pages serves `main` at the repo root. `CNAME` holds the custom domain —
 
 Palette, layout, typography and card structure are settled and have been iterated on heavily. A refresh adds and removes **cards**; it does not restyle the page.
 
-- All colour is OKLCH and tokenised in `:root`. No inline colour values anywhere.
-- Never reintroduce: the "Top 3 · Press" pickup badge, per-block `<h4>` subheadings for the 💥/🧐 split, a side-by-side column layout, a "why it matters" sentence, or a `max-width` on the note classes.
-- If a token changes, re-check contrast (WCAG AA) across both light and dark themes.
+**Redesigned 6 Sep 2026** — the page is now a light-only blurple-accent theme (ported from a Nocturne-style Design Canvas export), with a large stacked hero headline, a sticky "pinned" mini-header that appears once you scroll past the hero, sticky per-group and per-topic headers, and a two-column layout (sticky left-rail category label + right-hand content) inside each `<section class="group">`. There is no dark-mode variant — don't add one speculatively.
+
+- All colour is a plain hex value tokenised in `:root` (this design is not OKLCH — it was ported directly from the provided source; don't convert it back without being asked).
+- Cards are `<article class="card">` with an `<h4>` title and a `.mark` line indicator (see §3) — not the old `<div class="card">`/`<h3>`/`.card-mark` emoji structure.
+- Never reintroduce: the "Top 3 · Press" pickup badge, the 💥/🧐 emoji markers, a `.card-title-row` wrapper, per-block `<h4>` subheadings for the event/study split, a "why it matters" sentence, or a `max-width` on the `.group-note`/`.topic-note` classes.
+- If a token changes, re-check contrast (WCAG AA) — there is only one theme to check now.

@@ -179,9 +179,32 @@ h1.display .headline .word { position: relative; }
   background: rgba(255,255,255,0.92);
 }
 .sources-group { display: flex; flex-direction: column; gap: 7px; font-size: 12.5px; }
-.sources-group span { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--n700); }
-.sources-group a { text-decoration: none; color: var(--ink); }
-.sources-group a:hover { color: var(--accent-700); }
+.sources-group > span { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--n700); }
+.source-row { display: flex; align-items: center; gap: 6px; }
+.source-btn {
+  flex: 1 1 auto; text-align: left; border: 0; background: none; padding: 3px 0;
+  font: inherit; color: var(--ink); cursor: pointer; border-radius: 4px;
+}
+.source-btn:hover { color: var(--accent-700); }
+.source-btn.active { color: var(--accent-800); font-weight: 600; }
+.source-btn.active::before { content: "✓ "; }
+.source-ext {
+  flex: 0 0 auto; color: var(--n500); text-decoration: none; font-size: 11px;
+  padding: 2px 4px; border-radius: 4px;
+}
+.source-ext:hover { color: var(--accent-700); background: var(--accent-100); }
+
+.filter-chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11.5px; color: var(--accent-800);
+  background: var(--accent-100); border: 1px solid var(--accent-300);
+  border-radius: 999px; padding: 4px 6px 4px 10px;
+}
+.filter-chip button {
+  border: 0; background: none; cursor: pointer; color: var(--accent-700);
+  font-size: 13px; line-height: 1; padding: 2px;
+}
+.filter-chip button:hover { color: var(--accent-800); }
 
 .groups { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 48px; }
 .group { flex: 1 1 620px; min-width: 0; width: 100%; padding: 64px 0 0; }
@@ -322,29 +345,33 @@ footer.notes {
           <span class="legend-item"><span class="mark-swatch mark-study"></span>It was studied</span>
         </span>
       </div>
+      <span class="filter-chip" id="filter-chip" hidden>
+        Filtered: <span id="filter-chip-label"></span>
+        <button type="button" onclick="clearSourceFilter()" aria-label="Clear source filter">×</button>
+      </span>
       <details class="sources">
         <summary>12 sources</summary>
         <div class="sources-panel">
           <div class="sources-group">
             <span>AI labs</span>
-            <a href="https://www.anthropic.com/research" target="_blank" rel="noopener">Anthropic</a>
-            <a href="https://openai.com/safety/" target="_blank" rel="noopener">OpenAI</a>
-            <a href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener">Google DeepMind</a>
-            <a href="https://ai.meta.com/blog/" target="_blank" rel="noopener">Meta</a>
+            <span class="source-row"><button type="button" class="source-btn" data-key="Anthropic" onclick="toggleSourceFilter(this)">Anthropic</button><a class="source-ext" href="https://www.anthropic.com/research" target="_blank" rel="noopener" title="Open Anthropic's site" aria-label="Open Anthropic's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="OpenAI" onclick="toggleSourceFilter(this)">OpenAI</button><a class="source-ext" href="https://openai.com/safety/" target="_blank" rel="noopener" title="Open OpenAI's site" aria-label="Open OpenAI's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="Google DeepMind" onclick="toggleSourceFilter(this)">Google DeepMind</button><a class="source-ext" href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener" title="Open Google DeepMind's site" aria-label="Open Google DeepMind's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="Meta" onclick="toggleSourceFilter(this)">Meta</button><a class="source-ext" href="https://ai.meta.com/blog/" target="_blank" rel="noopener" title="Open Meta's site" aria-label="Open Meta's site">↗</a></span>
           </div>
           <div class="sources-group">
             <span>Research organisations</span>
-            <a href="https://www.aisi.gov.uk/blog" target="_blank" rel="noopener">UK AI Security Institute</a>
-            <a href="https://www.nist.gov/caisi" target="_blank" rel="noopener">US CAISI</a>
-            <a href="https://www.industry.gov.au/publications?pub-search=&pub-topic=All&pub-category=All&publisher=3988&field_date_value=All&items_per_page=10" target="_blank" rel="noopener">Australia's AI Safety Institute</a>
-            <a href="https://metr.org/research/" target="_blank" rel="noopener">METR</a>
+            <span class="source-row"><button type="button" class="source-btn" data-key="UK AI Security Institute" onclick="toggleSourceFilter(this)">UK AI Security Institute</button><a class="source-ext" href="https://www.aisi.gov.uk/blog" target="_blank" rel="noopener" title="Open UK AI Security Institute's site" aria-label="Open UK AI Security Institute's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="CAISI" onclick="toggleSourceFilter(this)">US CAISI</button><a class="source-ext" href="https://www.nist.gov/caisi" target="_blank" rel="noopener" title="Open US CAISI's site" aria-label="Open US CAISI's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="Australia's AI Safety Institute" onclick="toggleSourceFilter(this)">Australia's AI Safety Institute</button><a class="source-ext" href="https://www.industry.gov.au/publications?pub-search=&pub-topic=All&pub-category=All&publisher=3988&field_date_value=All&items_per_page=10" target="_blank" rel="noopener" title="Open Australia's AI Safety Institute's site" aria-label="Open Australia's AI Safety Institute's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="METR" onclick="toggleSourceFilter(this)">METR</button><a class="source-ext" href="https://metr.org/research/" target="_blank" rel="noopener" title="Open METR's site" aria-label="Open METR's site">↗</a></span>
           </div>
           <div class="sources-group">
             <span>Commentary</span>
-            <a href="https://safe.ai/newsletter" target="_blank" rel="noopener">CAIS AI Safety Newsletter</a>
-            <a href="https://newsletter.mlsafety.org/" target="_blank" rel="noopener">CAIS ML Safety Newsletter</a>
-            <a href="https://importai.substack.com" target="_blank" rel="noopener">Import AI</a>
-            <a href="https://www.deeplearning.ai/the-batch" target="_blank" rel="noopener">The Batch</a>
+            <span class="source-row"><button type="button" class="source-btn" data-key="AISN" onclick="toggleSourceFilter(this)">CAIS AI Safety Newsletter</button><a class="source-ext" href="https://safe.ai/newsletter" target="_blank" rel="noopener" title="Open CAIS AI Safety Newsletter's site" aria-label="Open CAIS AI Safety Newsletter's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="MLSN" onclick="toggleSourceFilter(this)">CAIS ML Safety Newsletter</button><a class="source-ext" href="https://newsletter.mlsafety.org/" target="_blank" rel="noopener" title="Open CAIS ML Safety Newsletter's site" aria-label="Open CAIS ML Safety Newsletter's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="Import AI" onclick="toggleSourceFilter(this)">Import AI</button><a class="source-ext" href="https://importai.substack.com" target="_blank" rel="noopener" title="Open Import AI's site" aria-label="Open Import AI's site">↗</a></span>
+            <span class="source-row"><button type="button" class="source-btn" data-key="The Batch" onclick="toggleSourceFilter(this)">The Batch</button><a class="source-ext" href="https://www.deeplearning.ai/the-batch" target="_blank" rel="noopener" title="Open The Batch's site" aria-label="Open The Batch's site">↗</a></span>
           </div>
         </div>
       </details>
@@ -921,13 +948,64 @@ footer.notes {
 
 <script>
   var RANGES = { 7: '30 Aug–5 Sep 2026', 30: '7 Aug–5 Sep 2026' };
+  var currentDays = 7;
+  var currentSourceKey = null;
+
+  function cardMatchesSource(card, key) {
+    var tags = card.querySelectorAll('.tags a');
+    return Array.prototype.some.call(tags, function (a) {
+      return a.textContent.indexOf(key) !== -1;
+    });
+  }
 
   function setWindow(days) {
+    currentDays = days;
+    document.querySelectorAll('.window-toggle button').forEach(function (btn) {
+      btn.classList.toggle('active', parseInt(btn.getAttribute('data-days'), 10) === days);
+    });
+    var range = RANGES[days];
+    var snap = document.getElementById('snapshot-range');
+    if (snap) snap.textContent = range;
+    var pr = document.getElementById('pinned-range');
+    if (pr) pr.textContent = range;
+    render();
+  }
+
+  function toggleSourceFilter(btn) {
+    var key = btn.getAttribute('data-key');
+    currentSourceKey = (currentSourceKey === key) ? null : key;
+    document.querySelectorAll('.source-btn').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-key') === currentSourceKey);
+    });
+    var chip = document.getElementById('filter-chip');
+    var chipLabel = document.getElementById('filter-chip-label');
+    if (currentSourceKey) {
+      chipLabel.textContent = btn.textContent;
+      chip.hidden = false;
+    } else {
+      chip.hidden = true;
+    }
+    render();
+  }
+
+  function clearSourceFilter() {
+    currentSourceKey = null;
+    document.querySelectorAll('.source-btn').forEach(function (b) {
+      b.classList.remove('active');
+    });
+    var chip = document.getElementById('filter-chip');
+    if (chip) chip.hidden = true;
+    render();
+  }
+
+  function render() {
     var cards = document.querySelectorAll('.card[data-window]');
     var visibleCount = 0;
     cards.forEach(function (card) {
       var w = parseInt(card.getAttribute('data-window'), 10);
-      var show = w <= days;
+      var windowOk = w <= currentDays;
+      var sourceOk = !currentSourceKey || cardMatchesSource(card, currentSourceKey);
+      var show = windowOk && sourceOk;
       card.style.display = show ? '' : 'none';
       if (show) visibleCount++;
     });
@@ -952,16 +1030,6 @@ footer.notes {
       });
       note.style.display = shown ? '' : 'none';
     });
-
-    document.querySelectorAll('.window-toggle button').forEach(function (btn) {
-      btn.classList.toggle('active', parseInt(btn.getAttribute('data-days'), 10) === days);
-    });
-
-    var range = RANGES[days];
-    var snap = document.getElementById('snapshot-range');
-    if (snap) snap.textContent = range;
-    var pr = document.getElementById('pinned-range');
-    if (pr) pr.textContent = range;
 
     var countEl = document.getElementById('dev-count');
     if (countEl) countEl.textContent = String(visibleCount);

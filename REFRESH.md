@@ -1,0 +1,204 @@
+# The AI Safety Frontier — daily refresh manual
+
+Operating manual for the scheduled agent that refreshes this site. `index.html` is the whole site: one self-contained file, no build step. Commit to `main` and GitHub Pages redeploys automatically.
+
+**Standing instruction from the owner: prioritise thoroughness over speed.** A lead that looks thin is a reason to dig, not to skip.
+
+---
+
+## 1. What the page is
+
+A personal AI-safety news dashboard organised on the *International AI Safety Report* (Bengio-chaired, 2026 edition) taxonomy. Three boxed supergroups, each with subtopics, each holding cards. Every card is one development from a tracked source.
+
+---
+
+## 2. Taxonomy and where a card goes
+
+### Capabilities
+Two subtopics, in this on-page order:
+1. **General Capabilities** (`data-topic="general-capabilities"`) — capability outside AI's own R&D: mathematics, science, security, general reasoning.
+2. **Recursive Self-Improvement** (`data-topic="rsi"`) — AI accelerating AI research itself: automated alignment research, ML replication, measured acceleration in AI-relevant R&D, agent-learning-speed scaling.
+
+*RSI vs General test*: does the card measure AI working on AI/ML research itself (→ RSI), or capability in some other domain (→ General)? "Could be a precursor to RSI" is **too broad** — nearly any capability gain could be framed that way. DiG-bench (a game-discovery benchmark) is General, not RSI, for exactly this reason.
+
+**Plain model releases are not tracked at all.** A new Gemini/Claude/Qwen/Muse version with no external validation of a specific capability result does not get a card. Only add a model-related item if it clears the Demonstrations or Research bar below.
+
+### Risks
+Three subtopics — **Malicious Use**, **Malfunctions**, **Systemic Risks** (the report's own three).
+
+### Risk Management
+Five subtopics — **Technical & Institutional Challenges**, **Risk Management Practices**, **Technical Safeguards & Monitoring**, **Open-Weight Models**, **Building Societal Resilience**.
+
+---
+
+## 3. The 💥 / 🧐 marker
+
+Every card carries one emoji in the top-right of its title row, marking which side of its subcategory's split it falls on:
+
+```html
+<div class="card-title-row">
+  <h3>Title</h3>
+  <span class="card-mark" title="Incidents">💥</span>
+</div>
+```
+
+- **💥 = something happened.** `title` is `Demonstrations` (Capabilities), `Incidents` (Risks), or `Implementation` (Risk Management).
+- **🧐 = something was studied.** `title` is `Research` in all three supergroups.
+
+The key is stated **once**, in the header meta row. Never restate it in supergroup notes, subtopic notes or the footer.
+
+**Tests:**
+- *Capabilities* — a one-off striking result from a specific instance → 💥 Demonstrations; a formal, repeatable, usually named benchmark → 🧐 Research. Both require external/independent validation.
+- *Risks* — did it actually happen (a real attack, breach, harm) → 💥 Incidents; is it a study/finding/investigation, including an independent investigation *of* a real incident → 🧐 Research.
+- *Risk Management* — **actor-based**: 💥 Implementation means a **developer** (a company that builds/deploys AI models) has actually deployed/shipped/run the practice, **or** a government entity has turned it into an actual commitment, framework, settlement or law. Everything else is 🧐 Research — *including a government research institute's own paper, tool or benchmark*, because the institute isn't a developer and a released tool isn't a commitment. Say "developers", never "AI producers".
+
+**Edge cases already decided — follow these:**
+- A system card goes to **Risks > Malfunctions > 🧐** when its headline finding is the model misbehaving (GPT-6 Astra's chain-of-thought monitorability drop). It stays in **Risk Management > Practices > 🧐** when it's about the evaluation regime and its results (GPT-5.6 August Updates). These two sit on opposite sides deliberately.
+- An open letter or diplomatic communiqué is **💥 Implementation**, not Research — it is a real institutional act, and "Research" means an actual study, not "anything that isn't a programme".
+- A purely descriptive societal-effects finding is **Systemic Risks > 🧐**, not Challenges. Challenges is specifically the evidence dilemma / evaluation gap / competitive dynamics.
+- Resilience requires someone *actively building capacity or responding*. Not merely subject matter that touches society.
+- Open-Weight Models is for the safety tension of strippable safeguards, evidenced by real red-teaming/eval work — not any open-weight release.
+
+---
+
+## 4. Tracked sources — 12
+
+**AI Labs**: Anthropic · OpenAI · Google DeepMind · Meta
+**Research Organisations**: UK AI Security Institute · US CAISI · Australia's AI Safety Institute · METR
+**AI Commentary** (newsletters): Import AI · The Batch · CAIS AI Safety Newsletter (AISN #N) · CAIS ML Safety Newsletter (MLSN #N)
+
+**A story only qualifies if a tracked source actually surfaced it.** However well-corroborated something is in the general press, if no tracked source carried it, it does not go on the board. This is firm.
+
+### Check BOTH listings for every source, every run
+Missing one has caused repeated real misses.
+
+| Source | Listings |
+| --- | --- |
+| Anthropic | anthropic.com/news · anthropic.com/research |
+| OpenAI | openai.com/news · openai.com/research · deploymentsafety.openai.com (system cards) |
+| Google DeepMind | deepmind.google/discover/blog/ · deepmind.google/research/publications/ |
+| Meta | ai.meta.com/blog · about.fb.com/news · research.meta.ai |
+| UK AISI | aisi.gov.uk/blog · aisi.gov.uk/research |
+| METR | metr.org/research/ · metr.org/blog/ · metr.org/notes/ |
+
+### Known source quirks
+- **OpenAI 403s WebFetch constantly** (news, research, individual `/index/` posts). Fall back to **several** targeted WebSearches — not one. A single search returns one slice of their output; a 10 Aug post sat unnoticed inside the window for weeks this way.
+- **Australia's AISI** publications URL reliably times out — use WebSearch (`site:industry.gov.au` + terms) every time.
+- **Meta**: research.facebook.com's RSS is dead.
+- **Newsletters**: fetch the full issue and extract *every* safety-relevant story, not just the lead. If an issue says "two reports", check you carded two.
+- A newsletter counts as the surfacing source even when the org it names isn't itself tracked.
+
+---
+
+## 5. Card conventions
+
+- **Body: exactly one sentence**, factual, never copied from the source. No "why it matters" second sentence.
+- **Lead with the finding, not the method.** "[Org] found [result] … based on [method]" — not "[Org] tested/analysed/ran …". Exception: process-announcement cards where the method *is* the news.
+- **Active voice, named actor.** Name the actual institution(s) for academic papers — check the PDF title page; "researchers" alone is not enough.
+- **Title: verbatim from the primary source.** If you swap the link, **swap the title and org date with it** — they are one unit.
+- **Tags — one-tag card** (primary source only): `Org · date`, linking to the specific article.
+- **Tags — two-tag card** (newsletter-surfaced): primary first (`Org · date`, the original document, with the *primary's own* publish date), then `via Newsletter #N · date`. If the primary genuinely has no date, leave it dateless rather than guessing.
+- No count badges, no cadence tags, no per-card feed URLs.
+- The `.subtopic-note` / `.supergroup-note` have no `max-width` — don't add one.
+
+---
+
+## 6. Windows (7-day / 30-day)
+
+Every card carries `data-window="7"` or `="30"`.
+
+- **Anchor both windows to the pull date**: 7-day = pull − 6 days; 30-day = pull − 29 days.
+- **Classify by most-recently-surfaced date** — the via/newsletter date on a two-tag card, the org date otherwise. Not the original publish date.
+- **Recompute every existing card before pulling anything new**: delete cards now before the 30-day floor; roll `7`→`30` for cards now before the 7-day floor.
+- A card can roll *back* into the 7-day window if a newsletter re-covers it with genuinely new information — add a second via-tag and fold the new information into the body.
+- Update the header `#window-range` span **and** both strings inside `setWindow()`, plus the footer Window paragraph's pull date and the footer Newsletters list.
+
+---
+
+## 7. Card order within a subtopic
+
+Sort by **(1) 💥 before 🧐, then (2) most-recent-surfacing date, newest first**. Re-run after adding cards.
+
+---
+
+## 8. Related-notes — window-aware
+
+```html
+<p class="related-note">↔ Related: <span class="rel rel-first">the <a href="#target-id">short label</a>, why it relates</span></p>
+```
+
+Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the first also carries `rel-first`. `setWindow()` hides clauses whose target card is hidden and hides the note entirely when none survive.
+
+**Each clause must read standalone** — no "and its…", no "its later…" — because any clause can become the first one shown. The separator comma is generated in CSS.
+
+**Bar for adding one:** it must bridge subtopics a reader wouldn't otherwise see together, and the link must be tight (same incident, same product line, direct causal link). Not "these happened the same week". Same-subtopic pairs don't need one.
+
+---
+
+## 9. Run order
+
+1. Compute the new windows from today's pull date.
+2. **Recompute every existing card's window first** — delete aged-out, roll 7→30.
+3. Pull every source, both listings, plus every newsletter issue since the last run.
+4. Filter to AI-safety-relevant items surfaced by a tracked source.
+5. Duplicate check — fold new information into an existing card rather than creating a second card for the same story.
+6. Classify, write the card, pick the 💥/🧐 marker.
+7. Verify every new link resolves and every related-note anchor resolves to a real `id`.
+8. Re-sort each subtopic (§7).
+9. Update header window-range, `setWindow()` strings, footer Window paragraph, footer Newsletters list.
+10. Validate (§10).
+11. Commit and push to `main`.
+
+---
+
+## 10. Validation — run before every commit
+
+```bash
+python3 - <<'PY'
+import re
+c=open('index.html').read()
+assert len(re.findall(r'<div\b',c))==c.count('</div>'), 'div imbalance'
+assert len(re.findall(r'<p[ >]',c))==c.count('</p>'), 'p imbalance'
+assert c.count('<span')==c.count('</span>'), 'span imbalance'
+assert c.count('<section')==c.count('</section>'), 'section imbalance'
+ids=set(re.findall(r'id="([^"]+)"',c))
+dead=[x for x in re.findall(r'href="#([^"]+)"',c) if x not in ids]
+assert not dead, f'dead anchors: {dead}'
+t=re.findall(r'<h3>([^<]*)</h3>',c)
+dup={x for x in t if t.count(x)>1}
+assert not dup, f'duplicate titles: {dup}'
+n=c.count('<div class="card" data-window')
+assert n==c.count('class="card-mark"'), 'every card needs exactly one marker'
+print(f'OK — {n} cards')
+PY
+```
+
+**Then verify placement by printing each card under its subtopic** — not just counting. A move-type edit can relocate cards between supergroups while every count still matches.
+
+### Two bugs that have actually happened — don't repeat them
+- **`html.index('data-topic="x"')` matches the CSS selector block, not the section.** The `<style>` block contains `[data-topic="resilience"]` etc. *before* any markup. Always anchor on the full opening tag `<div class="subtopic" data-topic="x">`.
+- **A subtopic's span must end at `min(next subtopic, its section's `</section>`)`.** Using only "next subtopic, else `</section>`" over-captures the *last* subtopic in a section and swallows the section boundary — this moved an entire subtopic into the wrong supergroup.
+
+Take a file copy before any bulk structural rewrite.
+
+---
+
+## 11. Deploy
+
+```bash
+git add index.html
+git commit -m "Refresh: <pull date>"
+git push origin main
+```
+
+GitHub Pages serves `main` at the repo root. `CNAME` holds the custom domain — don't delete it; Pages rewrites it if the domain is changed in settings.
+
+---
+
+## 12. Design constraints — do not change these
+
+Palette, layout, typography and card structure are settled and have been iterated on heavily. A refresh adds and removes **cards**; it does not restyle the page.
+
+- All colour is OKLCH and tokenised in `:root`. No inline colour values anywhere.
+- Never reintroduce: the "Top 3 · Press" pickup badge, per-block `<h4>` subheadings for the 💥/🧐 split, a side-by-side column layout, a "why it matters" sentence, or a `max-width` on the note classes.
+- If a token changes, re-check contrast (WCAG AA) across both light and dark themes.

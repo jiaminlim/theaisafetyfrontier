@@ -174,6 +174,8 @@ dup={x for x in t if t.count(x)>1}
 assert not dup, f'duplicate titles: {dup}'
 n=c.count('<article class="card"')
 assert n==c.count('class="mark '), 'every card needs exactly one marker'
+assert c.count('class="source-btn"')==12, 'expected 12 source filter buttons'
+assert 'id="filter-chip"' in c, 'filter chip missing'
 print(f'OK — {n} cards')
 PY
 ```
@@ -210,3 +212,6 @@ Palette, layout, typography and card structure are settled and have been iterate
 - Cards are `<article class="card">` with an `<h4>` title and a `.mark` line indicator (see §3) — not the old `<div class="card">`/`<h3>`/`.card-mark` emoji structure.
 - Never reintroduce: the "Top 3 · Press" pickup badge, the 💥/🧐 emoji markers, a `.card-title-row` wrapper, per-block `<h4>` subheadings for the event/study split, a "why it matters" sentence, or a `max-width` on the `.group-note`/`.topic-note` classes.
 - If a token changes, re-check contrast (WCAG AA) — there is only one theme to check now.
+- **The sticky left-rail category label (`.group-rail`, `position: sticky; top: 58px`) is a hard constraint.** A layout change that moves the group heading above the content (removing the two-column rail) was tried on 6 Sep 2026 to fix a margin-symmetry complaint and was explicitly rejected by the user ("undo THAT IS NOT WHAT I WANTED") and reverted. Don't re-attempt that fix. If margin symmetry comes up again, solve it some other way — the rail itself is not up for removal.
+- `.grid` uses a fixed `repeat(3, 1fr)` (with `@media (max-width:900px)` → `repeat(2,1fr)` and `@media (max-width:560px)` → `1fr`), not `auto-fill`/`minmax` — that produced 4 columns once the grid's `max-width` cap was removed. If the grid's container width changes again, re-check the column count renders as 3 on desktop.
+- **Source filter (added 6 Sep 2026)**: each entry in the Sources panel is a `<button class="source-btn" data-key="...">` (click to filter cards to that source) paired with a small `<a class="source-ext">↗</a>` that still opens the source's homepage. Filtering matches by substring against each card's `.tags a` text content (`cardMatchesSource()` in the `<script>` block) — **this means the tag text must keep containing the org's plain name** (e.g. "Anthropic · 4 Sep") or, for the two CAIS newsletters, the abbreviation used in the `data-key` ("AISN", "MLSN" — these match `via AISN #N` / `via MLSN #N` tag text, not the newsletters' full display names). Don't rename a `data-key` without checking it still matches real tag text. The filter composes with the 7/30-day window via a shared `render()` function — `setWindow()` and `toggleSourceFilter()`/`clearSourceFilter()` all call `render()` rather than duplicating the visibility logic. A dismissible `.filter-chip` in `.meta-row` shows the active filter; don't remove it without also removing the way users clear a filter without reopening the dropdown.

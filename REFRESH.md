@@ -19,7 +19,7 @@ Two subtopics, in this on-page order:
 1. **General Capabilities** (`data-topic="general-capabilities"`) — capability outside AI's own R&D: mathematics, science, security, general reasoning.
 2. **Recursive Self-Improvement** (`data-topic="rsi"`) — AI accelerating AI research itself: automated alignment research, ML replication, measured acceleration in AI-relevant R&D, agent-learning-speed scaling.
 
-*RSI vs General test*: does the card measure AI working on AI/ML research itself (→ RSI), or capability in some other domain (→ General)? "Could be a precursor to RSI" is **too broad** — nearly any capability gain could be framed that way. DiG-bench (a game-discovery benchmark) is General, not RSI, for exactly this reason.
+*RSI vs General test*: does the card measure AI working on AI/ML research itself (→ RSI), or capability in some other domain (→ General)? "Could be a precursor to RSI" is **too broad** — nearly any capability gain could be framed that way.
 
 **Plain model releases are not tracked at all.** A new Gemini/Claude/Qwen/Muse version with no external validation of a specific capability result does not get a card. Only add a model-related item if it clears the Demonstrations or Research bar below.
 
@@ -33,10 +33,10 @@ Five subtopics — **Technical & Institutional Challenges**, **Risk Management P
 
 ## 3. The event/study marker
 
-**Redesigned 6 Sep 2026** — the marker is no longer an emoji. Every card opens with a short horizontal line above its title, marking which side of its subcategory's split it falls on:
+Every card opens with a short horizontal line above its title, marking which side of its subcategory's split it falls on:
 
 ```html
-<article class="card" data-window="7" id="...">
+<article class="card" data-window="7" data-date="YYYY-MM-DD" id="...">
   <span class="mark mark-event" title="Incidents"></span>
   <h4>Title</h4>
   <p>...</p>
@@ -47,9 +47,7 @@ Five subtopics — **Technical & Institutional Challenges**, **Risk Management P
 - **`mark-event` (solid accent-coloured line) = something happened.** `title` is `Demonstrations` (Capabilities), `Incidents` (Risks), or `Implementation` (Risk Management).
 - **`mark-study` (dashed neutral line) = something was studied.** `title` is `Research` in all three supergroups.
 
-Cards are `<article class="card">`, not `<div>`, and the title is an `<h4>`, not an `<h3>` inside a `.card-title-row` — that wrapper no longer exists. The classification logic underneath (what counts as an event vs a study) is unchanged from the rules below; only the visual marker and card tag names changed.
-
-The key is stated **once**, in the header meta row ("Reading the marks"). Never restate it in supergroup notes, subtopic notes or the footer.
+Cards are `<article class="card">`, titles are `<h4>`. The key is stated **once**, in the header meta row ("Reading the marks"). Never restate it in supergroup notes, subtopic notes or the footer.
 
 **Tests:**
 - *Capabilities* — a one-off striking result from a specific instance → 💥 Demonstrations; a formal, repeatable, usually named benchmark → 🧐 Research. Both require external/independent validation.
@@ -57,7 +55,7 @@ The key is stated **once**, in the header meta row ("Reading the marks"). Never 
 - *Risk Management* — **actor-based**: 💥 Implementation means a **developer** (a company that builds/deploys AI models) has actually deployed/shipped/run the practice, **or** a government entity has turned it into an actual commitment, framework, settlement or law. Everything else is 🧐 Research — *including a government research institute's own paper, tool or benchmark*, because the institute isn't a developer and a released tool isn't a commitment. Say "developers", never "AI producers".
 
 **Edge cases already decided — follow these:**
-- A system card goes to **Risks > Malfunctions > 🧐** when its headline finding is the model misbehaving (GPT-6 Astra's chain-of-thought monitorability drop). It stays in **Risk Management > Practices > 🧐** when it's about the evaluation regime and its results (GPT-5.6 August Updates). These two sit on opposite sides deliberately.
+- A system card goes to **Risks > Malfunctions > 🧐** when its headline finding is the model misbehaving. It stays in **Risk Management > Practices > 🧐** when it's about the evaluation regime and its results. These two sit on opposite sides deliberately.
 - An open letter or diplomatic communiqué is **💥 Implementation**, not Research — it is a real institutional act, and "Research" means an actual study, not "anything that isn't a programme".
 - A purely descriptive societal-effects finding is **Systemic Risks > 🧐**, not Challenges. Challenges is specifically the evidence dilemma / evaluation gap / competitive dynamics.
 - Resilience requires someone *actively building capacity or responding*. Not merely subject matter that touches society.
@@ -74,7 +72,6 @@ The key is stated **once**, in the header meta row ("Reading the marks"). Never 
 **A story only qualifies if a tracked source actually surfaced it.** However well-corroborated something is in the general press, if no tracked source carried it, it does not go on the board. This is firm.
 
 ### Check ALL listings for every source, every run
-Missing one has caused repeated real misses.
 
 | Source | Listings |
 | --- | --- |
@@ -86,12 +83,12 @@ Missing one has caused repeated real misses.
 | METR | metr.org/research/ · metr.org/blog/ · metr.org/notes/ |
 
 ### Known source quirks
-- **OpenAI 403s WebFetch constantly** (news, research, individual `/index/` posts). Fall back to **several** targeted WebSearches — not one. A single search returns one slice of their output; a 10 Aug post sat unnoticed inside the window for weeks this way.
+- **OpenAI 403s WebFetch constantly** (news, research, individual `/index/` posts). Fall back to **several** targeted WebSearches — not one; a single search only returns one slice of their output.
 - **Australia's AISI** publications URL reliably times out — use WebSearch (`site:industry.gov.au` + terms) every time.
 - **Meta**: research.facebook.com's RSS is dead.
 - **Newsletters**: fetch the full issue and extract *every* safety-relevant story, not just the lead. If an issue says "two reports", check you carded two.
 - A newsletter counts as the surfacing source even when the org it names isn't itself tracked.
-- **Periodic standalone reports don't live on the main news/research listings — checking those more often won't catch them.** Anthropic's Risk Report (published every 3-6 months per their own Responsible Scaling Policy) is a standalone PDF on `www-cdn.anthropic.com`, only ever referenced in passing prose on the transparency page — not indexed as a dated item anywhere. OpenAI's governance/policy output (Frontier Governance Framework, "Approach to Frontier Risk", pacing announcements) publishes through `openai.com/global-affairs/` and a *separate* Substack, entirely outside `openai.com/news`/`research`. **Run a standing WebSearch every refresh** for `"Anthropic risk report" <current year>` and `"OpenAI" "global affairs" OR "frontier governance" <current year>` regardless of what the listings show — this is how the 14 Aug 2026 Risk Report was finally found (via WebSearch fallback), three weeks after publication, despite the listings being checked correctly on every run in between. If a similar standalone-report pattern turns up for another tracked org, add it here rather than relying on luck again.
+- **Periodic standalone reports (Anthropic's Risk Report, OpenAI's Global Affairs output) don't live on the main news/research listings — checking those more often won't catch them**, since they're never indexed there at all. Run a standing WebSearch every refresh for `"Anthropic risk report" <current year>` and `"OpenAI" "global affairs" OR "frontier governance" <current year>` regardless of what the listings show. If a similar standalone-report pattern turns up for another tracked org, add it to the table above.
 
 ---
 
@@ -108,15 +105,15 @@ Missing one has caused repeated real misses.
 
 ---
 
-## 6. Windows (Latest / 7-day / 30-day)
+## 6. Windows (New / 7-day / 30-day)
 
-Every card carries **both** `data-window="7"` or `="30"` **and** `data-date="YYYY-MM-DD"` (added 7 Sep 2026). Both encode the same underlying fact — the card's most-recently-surfaced date — but serve different jobs: `data-window` buckets a card into the 7/30-day tiers, `data-date` is the exact ISO date used by the "New" toggle (see §12) to find whichever cards share the single most recent date on the page. **A new or edited card must always carry both, kept consistent with each other.**
+Every card carries **both** `data-window="7"` or `="30"` **and** `data-date="YYYY-MM-DD"`. Both encode the same underlying fact — the card's most-recently-surfaced date — but serve different jobs: `data-window` buckets a card into the 7/30-day tiers, `data-date` is the exact ISO date used by the "New" toggle (see §12) to find whichever cards share the single most recent date on the page. **A new or edited card must always carry both, kept consistent with each other.**
 
 - **Anchor both windows to the pull date**: 7-day = pull − 6 days; 30-day = pull − 29 days.
-- **Classify by most-recently-surfaced date** — the via/newsletter date on a two-tag card, the org date otherwise (for a card like "OpenAI · 6 Aug (updated 19 Aug)", use the updated date). Not the original publish date. This same date is what goes in `data-date`, converted to `YYYY-MM-DD` (the site currently only has 2026 dates — mind the year if that ever changes).
+- **Classify by most-recently-surfaced date** — the via/newsletter date on a two-tag card, the org date otherwise (for a card like "OpenAI · 6 Aug (updated 19 Aug)", use the updated date). Not the original publish date. This same date is what goes in `data-date` (currently all 2026 — mind the year if that ever changes).
 - **Recompute every existing card before pulling anything new**: delete cards now before the 30-day floor; roll `7`→`30` for cards now before the 7-day floor. `data-date` never changes once set — only `data-window` rolls.
 - A card can roll *back* into the 7-day window if a newsletter re-covers it with genuinely new information — add a second via-tag, fold the new information into the body, and update `data-date` to the new surfacing date too.
-- Update the `RANGES` object at the top of the `<script>` block (**not** a `#window-range` span — that id was removed in the 6 Sep redesign; the range now renders into `#snapshot-range` automatically from `RANGES[days]`. The `#pinned-range` target was removed 7 Sep 2026 along with the whole pinned mini-header — don't reintroduce a reference to it), plus the footer Window paragraph's pull date and the footer Newsletters list. The "New" toggle's range text is computed automatically from the cards' `data-date` values — nothing to update there by hand.
+- Update the `RANGES` object at the top of the `<script>` block, plus the footer Window paragraph's pull date and the footer Newsletters list. The "New" toggle's range text is computed automatically from the cards' `data-date` values — nothing to update there by hand.
 
 ---
 
@@ -132,7 +129,7 @@ Sort by **(1) 💥 before 🧐, then (2) most-recent-surfacing date, newest firs
 <p class="related-note">↔ Related: <span class="rel rel-first">the <a href="#target-id">short label</a>, why it relates</span></p>
 ```
 
-Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the first also carries `rel-first`. `setWindow()` hides clauses whose target card is hidden and hides the note entirely when none survive.
+Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the first also carries `rel-first`. `render()` hides clauses whose target card is hidden and hides the note entirely when none survive.
 
 **Each clause must read standalone** — no "and its…", no "its later…" — because any clause can become the first one shown. The separator comma is generated in CSS.
 
@@ -144,7 +141,7 @@ Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the
 
 1. Compute the new windows from today's pull date.
 2. **Recompute every existing card's window first** — delete aged-out, roll 7→30.
-3. Pull every source, both listings, plus every newsletter issue since the last run.
+3. Pull every source, both listings, plus every newsletter issue since the last run, plus the standing standalone-report WebSearches (§4).
 4. Filter to AI-safety-relevant items surfaced by a tracked source.
 5. Duplicate check — fold new information into an existing card rather than creating a second card for the same story.
 6. Classify, write the card, pick the 💥/🧐 marker, and set both `data-window` and `data-date` (§6).
@@ -157,8 +154,6 @@ Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the
 ---
 
 ## 10. Validation — run before every commit
-
-**Redesigned 6 Sep 2026** — cards are now `<article class="card">` and titles are `<h4>`, not `<div class="card">`/`<h3>`. Update this script if either changes again.
 
 ```bash
 python3 - <<'PY'
@@ -184,11 +179,11 @@ PY
 
 **Then verify placement by printing each card under its subtopic** — not just counting. A move-type edit can relocate cards between supergroups while every count still matches.
 
-### Two bugs that have actually happened — don't repeat them
-- **`html.index('data-topic="x"')` matched the CSS selector block, not the section**, back when subtopics used `data-topic`. The redesign renamed that attribute to `data-nav` on `<div class="topic" data-nav="x" id="x">` (both group and topic wrappers use `data-nav` now) — but the same class of bug applies to *any* attribute-value lookup: if the value also appears in a CSS selector earlier in the file, a plain string search finds the wrong occurrence. Anchor on the full opening tag, not just the attribute.
-- **A topic's or group's span must end at `min(next sibling, its parent's actual closing tag)`**, found via depth-balanced div matching — not a naive "next occurrence of `</div>`", which over-captures nested content. Using only "next sibling, else end-of-file" over-captures the *last* item in a group and can swallow the group boundary, moving cards into the wrong supergroup.
-
-Take a file copy before any bulk structural rewrite.
+### Bulk-edit safety
+- **When searching for a section by an attribute value (e.g. `data-nav="x"`), anchor on the full opening tag, not just the attribute string** — the same value can also appear in a CSS selector earlier in the file, and a plain string search will find that instead.
+- **A topic's or group's span must end at `min(next sibling, its parent's actual closing tag)`**, found via depth-balanced div matching — not a naive "next occurrence of `</div>`", which over-captures nested content and can swallow the group boundary, moving cards into the wrong supergroup.
+- Take a file copy before any bulk structural rewrite.
+- **Screenshot the page after every refresh**, not just after a layout-specific fix — a `--window-size=1400,700` screenshot of the top of the page is enough to catch a stray visible element that validation alone won't (see the headless Chrome note in §12).
 
 ---
 
@@ -206,23 +201,22 @@ GitHub Pages serves `main` at the repo root. `CNAME` holds the custom domain —
 
 ## 12. Design constraints — do not change these
 
-Palette, layout, typography and card structure are settled and have been iterated on heavily. A refresh adds and removes **cards**; it does not restyle the page.
+Palette, layout, typography and card structure are settled. A refresh adds and removes **cards**; it does not restyle the page.
 
-**Redesigned 6 Sep 2026** — the page is now a light-only blurple-accent theme (ported from a Nocturne-style Design Canvas export), with a large stacked hero headline, sticky per-group and per-topic headers, and a two-column layout (sticky left-rail category label + right-hand content) inside each `<section class="group">`. There is no dark-mode variant — don't add one speculatively. **The page originally also had a sticky "pinned" mini-header that faded in at the top of the viewport once you scrolled past the hero (showing category/topic/date-range) — the user disliked it and it was removed entirely on 7 Sep 2026** (markup, CSS, and its scroll-listener JS all deleted, along with the now-dead `hero-anchor` id). Don't reintroduce it.
+The page is a light-only blurple-accent theme with a large stacked hero headline, sticky per-group and per-topic headers, and a two-column layout (sticky left-rail category label + right-hand content) inside each `<section class="group">`. There is no dark-mode variant and no pinned/fixed mini-header — don't add either speculatively.
 
-- All colour is a plain hex value tokenised in `:root` (this design is not OKLCH — it was ported directly from the provided source; don't convert it back without being asked).
-- Cards are `<article class="card">` with an `<h4>` title and a `.mark` line indicator (see §3) — not the old `<div class="card">`/`<h3>`/`.card-mark` emoji structure.
-- Never reintroduce: the "Top 3 · Press" pickup badge, the 💥/🧐 emoji markers, a `.card-title-row` wrapper, per-block `<h4>` subheadings for the event/study split, a "why it matters" sentence, or a `max-width` on the `.group-note`/`.topic-note` classes.
-- If a token changes, re-check contrast (WCAG AA) — there is only one theme to check now.
-- **The sticky left-rail category label (`.group-rail`, `position: sticky; top: 58px`) is a hard constraint.** A layout change that moves the group heading above the content (removing the two-column rail) was tried on 6 Sep 2026 to fix a margin-symmetry complaint and was explicitly rejected by the user ("undo THAT IS NOT WHAT I WANTED") and reverted. Don't re-attempt that fix. If margin symmetry comes up again, solve it some other way — the rail itself is not up for removal.
-- `.grid` uses a fixed `repeat(3, 1fr)` (with `@media (max-width:900px)` → `repeat(2,1fr)` and `@media (max-width:560px)` → `1fr`), not `auto-fill`/`minmax` — that produced 4 columns once the grid's `max-width` cap was removed. If the grid's container width changes again, re-check the column count renders as 3 on desktop.
-- **Source filter (added 6 Sep 2026)**: each entry in the Sources panel is a `<button class="source-btn" data-key="...">` (click to filter cards to that source) paired with a small `<a class="source-ext">↗</a>` that still opens the source's homepage. Filtering matches by substring against each card's `.tags a` text content (`cardMatchesSource()` in the `<script>` block) — **this means the tag text must keep containing the org's plain name** (e.g. "Anthropic · 4 Sep") or, for the two CAIS newsletters, the abbreviation used in the `data-key` ("AISN", "MLSN" — these match `via AISN #N` / `via MLSN #N` tag text, not the newsletters' full display names). Don't rename a `data-key` without checking it still matches real tag text. The filter composes with the 7/30-day window via a shared `render()` function — `setWindow()` and `toggleSourceFilter()`/`clearSourceFilter()` all call `render()` rather than duplicating the visibility logic. A dismissible `.filter-chip` in `.meta-row` shows the active filter; don't remove it without also removing the way users clear a filter without reopening the dropdown.
-- **`.group-rail` is `flex: 0 0 200px` with `min-width: 0` (fixed 7 Sep 2026) — do not shrink the 200px or remove `min-width: 0`.** Flex items get an implicit "automatic minimum size" from their content; since the rail's `<h2>` contains a single unbreakable word ("Capabilities") or a long word inside a longer phrase ("Management" inside "Risk Management"), without `min-width: 0` the rail silently grows past its flex-basis by whatever amount the longest word overflows it — and since each group's heading is a different length, this made each group's body content start at a visibly different x position (first fix attempt used 150px, which stopped the drift but was still narrower than "Management" alone needs (~191px), so "Management" visibly overflowed into the gap — the user caught this after it shipped). **200px is the minimum width that fits "Management" (the longest single word among current group names, ~191px wide at max clamp font-size) with a small margin, on its own wrapped line, with zero overflow.** If a future group name introduces an even longer unbreakable word, re-measure via headless Chrome (see below) and widen the rail again rather than letting it silently drift. Don't add `white-space: nowrap` to `.group-rail h2` — that was tried and made "Risk Management" overlap the body paragraph text, since forcing the whole phrase onto one line needs ~259px. Two-line wrapping at the natural word-space is correct for a long group name; the rail width just needs to fit the longest individual word, not the whole phrase.
-- **`.meta-row` uses `align-items: flex-start`, not `flex-end`** — the three stat blocks (Developments / Window / Reading the marks) have different content heights, so bottom-aligning them put the labels at different heights. Top-aligning keeps all three labels on one line. If a fourth stat block is ever added here, keep flex-start.
-- **`.scroll-mask`** is a fixed, background-colored strip pinned to the very top of the viewport (`height: 58px`, disabled at the `<640px` breakpoint) — it exists solely to mask the gap between the viewport top and the sticky `.topic-head`'s `top: 46px` offset, which would otherwise let scrolled-past content visibly peek through that gap now that the old pinned mini-header (which used to cover it) is gone. Don't delete it without checking that gap is covered some other way.
-- **"New" window toggle (added 7 Sep 2026)**: a third button in `.window-toggle` alongside 7-day/30-day, `data-days="latest"`. It filters to whichever cards share the maximum `data-date` found on the page (`latestDateISO()` in the `<script>` block scans every `.card[data-date]` and takes the max ISO string — no hardcoded date to maintain). This can legitimately show many cards, one card, or occasionally more than expected if several stories broke the same day — that's correct behavior, not a bug. **This is why every card needs `data-date` kept accurate (§6)** — a missing or stale `data-date` silently breaks this toggle for that card. The button label is "New" (renamed from "Latest update" then "Latest") and `.window-toggle button` padding/font-size is reduced under the `<640px` breakpoint — both changes came from a real mobile-clipping bug at 320-375px caught via headless-Chrome screenshots after adding the third button; don't widen the label or revert the mobile sizing without re-checking 320px.
-- **Hero highlight bar animation (added 7 Sep 2026)**: `.headline .swatch` (the accent box behind "Frontier") grows in from `scaleX(0)` to `scaleX(1)` on load via the `swatch-grow` keyframe animation, guarded by `@media (prefers-reduced-motion: no-preference)` — same accessibility pattern as the card hover effects. Don't remove the reduced-motion guard, and don't touch this without re-checking `prefers-reduced-motion: reduce` still shows the static final state immediately (verified via `--force-prefers-reduced-motion` in headless Chrome, not just eyeballing).
-- **Footer rewritten 7 Sep 2026**: `footer.notes` now opens with an `<h2 class="notes-heading">Notes from Author</h2>` — don't remove it. The Categories row now states plainly that Risks/Risk Management come directly from the report, the capability split and event/study mark are the site's own, and cards are "placed by judgment using an LLM; human review is conducted periodically" — keep that disclosure accurate; don't revert to earlier wording that omitted the LLM/human-review mention. The Window row no longer has the "sources with nothing... check the 30-day view" sentence, and the Refresh row is now just "Refresh happens at midnight AEST daily." — don't re-add the old "Ask to re-check sources anytime" copy.
-- **Headless Chrome is available in this environment** for visual verification — `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless --disable-gpu --screenshot=out.png --window-size=W,H file:///path/to/index.html` renders a real screenshot; append a `<script>` block to a scratch copy of the file and use `--dump-dom` to read back `getBoundingClientRect()` values as text for precise layout checks (e.g. confirming two elements' left edges actually match) rather than guessing from CSS alone. Use a scratch copy, never the real `index.html`, for any injected debug script.
-- **Any element toggled via the `hidden` HTML attribute (the filter chip is the current example) needs an explicit `.your-class[hidden] { display: none; }` rule if that class also sets its own `display` value.** A class selector like `.filter-chip { display: inline-flex; }` beats the browser's default `[hidden] { display: none; }` UA rule, so the element stays visible even while `hidden` is set — this shipped unnoticed until a headless-Chrome screenshot during a routine refresh caught the chip showing with no filter active. Check this pattern on every future toggled/dismissible element on the page.
-- **Screenshot the page after every refresh, not just after a layout-specific fix** — the filter-chip bug above was caught this way, not by reading the code. A quick `--window-size=1400,700` screenshot of the top of the page is enough to catch a stray visible element.
+- All colour is a plain hex value tokenised in `:root` (not OKLCH) — don't convert it without being asked.
+- Cards are `<article class="card">` with an `<h4>` title and a `.mark` line indicator (§3).
+- Never reintroduce: a "Top 3 · Press" pickup badge, 💥/🧐 emoji markers, a `.card-title-row` wrapper, per-block subheadings for the event/study split, a "why it matters" sentence, or a `max-width` on `.group-note`/`.topic-note`.
+- If a token changes, re-check contrast (WCAG AA).
+- **The sticky left-rail category label (`.group-rail`, `position: sticky; top: 58px`) is a hard constraint — do not restructure it into a heading-above-content layout.** A past attempt to do this (to fix a margin-symmetry complaint) was explicitly rejected by the owner. If margin symmetry comes up again, solve it another way.
+- **`.group-rail` is `flex: 0 0 200px` with `min-width: 0` — do not shrink the width or remove `min-width: 0`.** Flex items get an implicit minimum size from their content; without `min-width: 0`, the rail silently grows past its flex-basis to fit whatever the longest unbroken word in a group heading needs, which then makes different groups' body content start at different x positions. 200px is the minimum that fits "Management" (the longest word among current group names) on its own wrapped line with zero overflow. If a future group name introduces a longer unbroken word, re-measure via headless Chrome and widen the rail. Don't add `white-space: nowrap` to `.group-rail h2` to force one line — a two-word group name needs far more width than 200px on one line and will overlap the body text; two-line wrapping at the natural word-space is correct.
+- `.grid` uses a fixed `grid-template-columns: repeat(3, 1fr)` (with `@media (max-width:900px)` → `repeat(2,1fr)` and `@media (max-width:560px)` → `1fr`), not `auto-fill`/`minmax`. If the grid's container width changes, re-check the column count still renders as 3 on desktop.
+- **Source filter**: each entry in the Sources panel is a `<button class="source-btn" data-key="...">` (click to filter cards to that source) paired with a small `<a class="source-ext">↗</a>` that still opens the source's homepage. Filtering matches by substring against each card's `.tags a` text content (`cardMatchesSource()`) — **the tag text must keep containing the org's plain name** (e.g. "Anthropic · 4 Sep") or, for the two CAIS newsletters, the abbreviation used in the `data-key` ("AISN", "MLSN" — these match `via AISN #N`/`via MLSN #N` tag text, not the newsletters' full display names). Don't rename a `data-key` without checking it still matches real tag text. The filter composes with the 7/30/New window via a shared `render()` function. A dismissible `.filter-chip` in `.meta-row` shows the active filter.
+- **`.meta-row` uses `align-items: flex-start`, not `flex-end`** — the stat blocks have different content heights, so bottom-aligning them puts the labels at different heights. Keep flex-start if a fourth stat block is ever added.
+- **`.scroll-mask`** is a fixed, background-colored strip pinned to the viewport top (`height: 58px`, disabled at `<640px`) that masks the gap between the viewport top and the sticky `.topic-head`'s `top: 46px` offset — without it, scrolled-past content visibly peeks through that gap. Don't delete it without covering that gap some other way.
+- **"New" window toggle**: a third button in `.window-toggle` alongside 7-day/30-day, `data-days="latest"`, labelled "New". It filters to whichever cards share the maximum `data-date` found on the page (`latestDateISO()` scans every `.card[data-date]` and takes the max ISO string — no hardcoded date to maintain). This can legitimately show many cards, one card, or none — that's correct behavior. `.window-toggle button` padding/font-size is reduced under the `<640px` breakpoint to prevent the three-button row clipping on narrow screens — re-check 320px before widening the label or padding.
+- **Hero highlight bar**: `.headline .swatch` (the accent box behind "Frontier") grows in from `scaleX(0)` to `scaleX(1)` on load via the `swatch-grow` keyframe animation, guarded by `@media (prefers-reduced-motion: no-preference)`. Don't remove the reduced-motion guard.
+- **Footer** (`footer.notes`) opens with `<h2 class="notes-heading">Notes from Author</h2>`. The Categories row states that Risks/Risk Management come directly from the report, the capability split and event/study mark are the site's own, and cards are "placed by judgment using an LLM; human review is conducted periodically" — keep that disclosure accurate. The Refresh row states the daily midnight AEST cadence.
+- **Headless Chrome is available in this environment** for visual verification — `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome --headless --disable-gpu --screenshot=out.png --window-size=W,H file:///path/to/index.html` renders a real screenshot; append a `<script>` block to a **scratch copy** of the file (never the real `index.html`) and use `--dump-dom` to read back `getBoundingClientRect()` values as text for precise layout checks rather than guessing from CSS alone.
+- **Any element toggled via the `hidden` HTML attribute needs an explicit `.your-class[hidden] { display: none; }` rule if that class also sets its own `display` value** — a class selector's `display` beats the browser's default `[hidden]` rule, so the element stays visible even while `hidden` is set. Check this on every toggled/dismissible element.

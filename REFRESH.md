@@ -73,13 +73,13 @@ The key is stated **once**, in the header meta row ("Reading the marks"). Never 
 
 **A story only qualifies if a tracked source actually surfaced it.** However well-corroborated something is in the general press, if no tracked source carried it, it does not go on the board. This is firm.
 
-### Check BOTH listings for every source, every run
+### Check ALL listings for every source, every run
 Missing one has caused repeated real misses.
 
 | Source | Listings |
 | --- | --- |
-| Anthropic | anthropic.com/news · anthropic.com/research |
-| OpenAI | openai.com/news · openai.com/research · deploymentsafety.openai.com (system cards) |
+| Anthropic | anthropic.com/news · anthropic.com/research · anthropic.com/transparency/voluntary-commitments (Risk Reports) |
+| OpenAI | openai.com/news · openai.com/research · deploymentsafety.openai.com (system cards) · openai.com/global-affairs/ and openaiglobalaffairs.substack.com (governance/policy) |
 | Google DeepMind | deepmind.google/discover/blog/ · deepmind.google/research/publications/ |
 | Meta | ai.meta.com/blog · about.fb.com/news · research.meta.ai |
 | UK AISI | aisi.gov.uk/blog · aisi.gov.uk/research |
@@ -91,6 +91,7 @@ Missing one has caused repeated real misses.
 - **Meta**: research.facebook.com's RSS is dead.
 - **Newsletters**: fetch the full issue and extract *every* safety-relevant story, not just the lead. If an issue says "two reports", check you carded two.
 - A newsletter counts as the surfacing source even when the org it names isn't itself tracked.
+- **Periodic standalone reports don't live on the main news/research listings — checking those more often won't catch them.** Anthropic's Risk Report (published every 3-6 months per their own Responsible Scaling Policy) is a standalone PDF on `www-cdn.anthropic.com`, only ever referenced in passing prose on the transparency page — not indexed as a dated item anywhere. OpenAI's governance/policy output (Frontier Governance Framework, "Approach to Frontier Risk", pacing announcements) publishes through `openai.com/global-affairs/` and a *separate* Substack, entirely outside `openai.com/news`/`research`. **Run a standing WebSearch every refresh** for `"Anthropic risk report" <current year>` and `"OpenAI" "global affairs" OR "frontier governance" <current year>` regardless of what the listings show — this is how the 14 Aug 2026 Risk Report was finally found (via WebSearch fallback), three weeks after publication, despite the listings being checked correctly on every run in between. If a similar standalone-report pattern turns up for another tracked org, add it here rather than relying on luck again.
 
 ---
 

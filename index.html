@@ -287,6 +287,7 @@ footer.notes {
 .notes-text { flex: 1 1 300px; min-width: 0; margin: 0; font-size: 12.5px; line-height: 1.65; color: var(--n700); }
 .notes-text a { color: var(--accent-700); text-decoration: none; }
 .notes-text a:hover { text-decoration: underline; }
+.notes-heading { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 15px; letter-spacing: -0.01em; color: var(--ink); }
 
 :focus-visible { outline: 2px solid var(--accent-700); outline-offset: 2px; }
 
@@ -906,13 +907,14 @@ footer.notes {
   </div>
 
   <footer class="notes">
+    <h2 class="notes-heading">Notes from Author</h2>
     <div class="notes-row">
       <span class="notes-label">Categories</span>
-      <p class="notes-text">Drawn from the <a href="https://internationalaisafetyreport.org/" target="_blank" rel="noopener">International AI Safety Report</a> — Capabilities (Recursive Self-Improvement / General Capabilities), Risks (Malicious Use / Malfunctions / Systemic Risks), Risk Management (five report-defined subcategories) — the first two splits are our own, as is the mark separating what happened from what was studied within each. Placed by judgment; see the <a href="https://arxiv.org/abs/2602.21012" target="_blank" rel="noopener">2026 edition</a> for the report's own examples.</p>
+      <p class="notes-text">Risks (Malicious Use / Malfunctions / Systemic Risks), Risk Management (five report-defined subcategories) are drawn directly from the <a href="https://internationalaisafetyreport.org/" target="_blank" rel="noopener">2026 International AI Safety Report</a>. The capability split is our own, as is the mark separating what happened from what was studied within each. Each card is placed by judgment using an LLM; human review is conducted periodically.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">Window</span>
-      <p class="notes-text">A snapshot pulled 7 Sep 2026 — not a live feed. Toggle above between New, last 7 days, and last 30; only AI-safety-relevant posts are shown either way. "New" shows whichever cards share the most recent surfaced date, however many that is — some days that's several stories, some days none. Sources with nothing in the last 7 days show nothing rather than a padded-in older post — check the 30-day view instead.</p>
+      <p class="notes-text">A snapshot pulled 7 Sep 2026 — not a live feed. Toggle above between New, last 7 days, and last 30; only AI-safety-relevant posts are shown either way. "New" shows whichever cards share the most recent surfaced date, however many that is — some days that's several stories, some days none.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">Newsletters mined</span>
@@ -920,7 +922,7 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Ask to re-check sources anytime. Each card's mark records whether the development happened or was studied.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily.</p>
     </div>
   </footer>
 

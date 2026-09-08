@@ -58,7 +58,7 @@ Cards are `<article class="card">`, titles are `<h4>`. The key is stated **once*
 - A system card goes to **Risks > Malfunctions > 🧐** when its headline finding is the model misbehaving. It stays in **Risk Management > Practices > 🧐** when it's about the evaluation regime and its results. These two sit on opposite sides deliberately.
 - An open letter or diplomatic communiqué is **💥 Implementation**, not Research — it is a real institutional act, and "Research" means an actual study, not "anything that isn't a programme".
 - A purely descriptive societal-effects finding is **Systemic Risks > 🧐**, not Challenges. Challenges is specifically the evidence dilemma / evaluation gap / competitive dynamics.
-- Resilience requires someone *actively building capacity or responding*. Not merely subject matter that touches society.
+- Resilience takes the same actor-based split as the rest of Risk Management: 💥 Implementation is an actor *actively building capacity or responding*; 🧐 Research is a study of what would help — including surveys of public policy support and meta-analyses of intervention efficacy (e.g. worker-retraining program effectiveness, policy-preference surveys on labor displacement). Both sides belong in Resilience; what's excluded is merely descriptive subject matter that touches society without engaging a response or a proposed one — that's Systemic Risks instead.
 - Open-Weight Models is for the safety tension of strippable safeguards, evidenced by real red-teaming/eval work — not any open-weight release.
 
 ---

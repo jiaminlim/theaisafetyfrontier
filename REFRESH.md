@@ -87,6 +87,12 @@ Cards are `<article class="card">`, titles are `<h4>`. The key is stated **once*
 - **Australia's AISI** publications URL reliably times out — use WebSearch (`site:industry.gov.au` + terms) every time.
 - **Meta**: research.facebook.com's RSS is dead.
 - **Newsletters**: fetch the full issue and extract *every* safety-relevant story, not just the lead. If an issue says "two reports", check you carded two.
+- **Checking whether a new newsletter issue exists: always try a direct WebFetch of the newsletter's own archive/RSS page FIRST, before falling back to WebSearch.** WebSearch lags real publish time by hours while the page gets crawled/indexed — a newsletter published minutes (or hours) before this refresh runs can still come back empty on WebSearch even though it's already live, causing a false "nothing new" conclusion (this has actually happened: Import AI 472 was live ~90 minutes before a refresh's WebSearch check and still wasn't found). A direct fetch of the source itself has no such lag. Try these first, every run:
+  - Import AI: `https://importai.substack.com/archive` (or `/feed` for the raw RSS)
+  - The Batch: `https://www.deeplearning.ai/the-batch`
+  - CAIS AI Safety Newsletter: `https://newsletter.safe.ai/archive` (or `/feed`)
+  - CAIS ML Safety Newsletter: `https://newsletter.mlsafety.org/archive` (or `/feed`)
+  Only fall back to several varied WebSearch queries if the direct fetch is blocked (egress-restricted sandboxes have blocked these before) or errors out. If forced onto WebSearch alone for a newsletter that publishes on a predictable day (Import AI: Sundays) and today is at or past that day with nothing found, don't treat that as confident proof nothing published — note the uncertainty explicitly in the run's summary rather than silently concluding "nothing new," since it may just not be indexed yet.
 - A newsletter counts as the surfacing source even when the org it names isn't itself tracked.
 - **Periodic standalone reports (Anthropic's Risk Report, OpenAI's Global Affairs output) don't live on the main news/research listings — checking those more often won't catch them**, since they're never indexed there at all. Run a standing WebSearch every refresh for `"Anthropic risk report" <current year>` and `"OpenAI" "global affairs" OR "frontier governance" <current year>` regardless of what the listings show. If a similar standalone-report pattern turns up for another tracked org, add it to the table above.
 

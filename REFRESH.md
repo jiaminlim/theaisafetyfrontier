@@ -137,6 +137,8 @@ Sort by **(1) 💥 before 🧐, then (2) most-recent-surfacing date, newest firs
 
 Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the first also carries `rel-first`. `render()` hides clauses whose target card is hidden and hides the note entirely when none survive.
 
+**Clicking a `.rel a[href^="#"]` link highlights the target card** (`.card.is-highlighted`, a 2.5s accent-ring flash via `highlightCard()` in the `<script>` block) so the reader doesn't have to scan every card in that row to find the right one — added 9 Sep 2026. This relies on the link's `href` matching a real card `id` exactly, same as the anchor itself; don't rename a card's `id` without checking both the `href` and this still work. The same function also fires on `hashchange` and on initial page load if the URL already has a `#hash`.
+
 **Each clause must read standalone** — no "and its…", no "its later…" — because any clause can become the first one shown. The separator comma is generated in CSS.
 
 **Bar for adding one:** it must bridge subtopics a reader wouldn't otherwise see together, and the link must be tight (same incident, same product line, direct causal link). Not "these happened the same week". Same-subtopic pairs don't need one.

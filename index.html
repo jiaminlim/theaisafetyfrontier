@@ -290,6 +290,9 @@ footer.notes {
 .notes-text a { color: var(--accent-700); text-decoration: none; }
 .notes-text a:hover { text-decoration: underline; }
 .notes-heading { margin: 0; font-family: var(--font-display); font-weight: 500; font-size: 15px; letter-spacing: -0.01em; color: var(--ink); }
+.notes-byline { margin: 4px 0 0; font-size: 12.5px; color: var(--n700); }
+.notes-byline a { color: var(--accent-700); text-decoration: none; }
+.notes-byline a:hover { text-decoration: underline; }
 
 :focus-visible { outline: 2px solid var(--accent-700); outline-offset: 2px; }
 
@@ -906,6 +909,7 @@ footer.notes {
 
   <footer class="notes">
     <h2 class="notes-heading">Notes from the Author</h2>
+    <p class="notes-byline">— Jiamin Lim · <a href="mailto:jiaminlim0@gmail.com">jiaminlim0@gmail.com</a></p>
     <div class="notes-row">
       <span class="notes-label">Categories</span>
       <p class="notes-text">The categories are inspired by the <a href="https://internationalaisafetyreport.org/" target="_blank" rel="noopener">2026 International AI Safety Report</a>. The 'Risks' and 'Risk Management' categories and sub-categories are drawn directly from the report. The 'Capability' split is our own, as is the mark separating what happened from what was studied within each. An LLM is used to conduct the classification analysis. A human reviewer conducts regular spot-checks to provide feedback on misclassifications, this iterative process improves its reliability.</p>

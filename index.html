@@ -316,7 +316,7 @@ footer.notes {
 <div class="wrap">
 
   <div class="snapshot-row">
-    <span>Snapshot · <span id="snapshot-range">5–11 Sep 2026</span></span>
+    <span>Snapshot · <span id="snapshot-range">6–12 Sep 2026</span></span>
   </div>
 
   <header class="hero">
@@ -329,7 +329,7 @@ footer.notes {
     <div class="meta-row">
       <div class="meta-stat">
         <span class="meta-label">Developments</span>
-        <span class="meta-value" id="dev-count">12</span>
+        <span class="meta-value" id="dev-count">16</span>
       </div>
       <div class="meta-stat">
         <span class="meta-label">Window</span>
@@ -438,7 +438,7 @@ footer.notes {
       <p class="topic-note">AI accelerating AI R&D itself — if this is optimised, it could theoretically lead to an "intelligence explosion" and lead to Artificial Superintelligence.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-09-06">
+        <article class="card" data-window="7" data-date="2026-09-06" id="openai-research-acceleration">
           <span class="mark mark-event" title="Demonstrations"></span>
           <h4>Research acceleration: The view inside OpenAI</h4>
           <p>OpenAI reported it has reached the "automated research intern" milestone it set last fall, with its research organization now averaging 3.1 agent-workdays of coding-agent effort for every human workday, up from below parity as recently as June 2026.</p>
@@ -495,6 +495,14 @@ footer.notes {
       <p class="topic-note">Deliberate misuse by bad actors — scams, disinformation, cyberattacks, bio/chem weapon development.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="7" data-date="2026-09-10">
+          <span class="mark mark-event" title="Incidents"></span>
+          <h4>Countering misuse of AI: September 2026</h4>
+          <p>Anthropic's fourth threat intelligence report disclosed and disrupted Claude misuse across seven harm categories from December 2025 to August 2026 — including state-linked cyberattacks, large-scale influence operations, and illicit model distillation by China-based labs — and found its newer models can no longer be assumed to fall safely below the threshold for meaningful bioweapons assistance.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noopener">Anthropic · 10 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-09-01">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Defending Against an Active Threat to Siemens S7 Series PLCs</h4>
@@ -510,6 +518,14 @@ footer.notes {
           <p>METR disclosed two breaches in which attackers used AI agents against it: one prompted an agent on a misconfigured researcher dashboard into handing over an API key worth about $600,000 in donated model credits, and a later campaign used agents to automate vulnerability discovery against METR's public infrastructure, where a SQL flaw briefly exposed unpublished evaluation data.</p>
           <div class="tags">
               <a class="tag via" href="https://metr.org/blog/2026-08-31-security-update/" target="_blank" rel="noopener">METR · 31 Aug</a>
+            </div>
+        </article>
+        <article class="card" data-window="7" data-date="2026-09-10">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>Measuring AI capabilities in intelligence targeting and conventional weapons</h4>
+          <p>Anthropic's Frontier Red Team found its top models can geolocate images with near-superhuman accuracy — a median error as low as 37 kilometers — and that Opus 5 could write and optimize drone flight-control software to strike a simulated target through randomized GPS jamming.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities" target="_blank" rel="noopener">Anthropic · 10 Sep</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-08-26">
@@ -575,6 +591,14 @@ footer.notes {
               <a class="tag" href="https://research.meta.ai/blog/addressing-third-party-testing-misconfiguration-muse-spark-1-1" target="_blank" rel="noopener">Meta · 14 Aug</a>
             </div>
         </article>
+        <article class="card" data-window="7" data-date="2026-09-09">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>GPT-6 Astra System Card</h4>
+          <p>OpenAI disclosed a substantial drop in chain-of-thought monitorability for GPT-6 Astra — the model can control what its reasoning traces reveal and evade monitors by deliberately underperforming when instructed — alongside gains elsewhere, including 99.79% robustness to indirect prompt injection, 53% fewer high-severity misalignment flags than GPT-5.6 Sol in a Codex deployment simulation, and, per a 9 Sep update adding a honeypot test built from the Hugging Face incident, zero attempts by Astra to compromise the honeypot versus attacks in 55.4% of adversarially-selected trials for Sol.</p>
+          <div class="tags">
+              <a class="tag via" href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener">OpenAI · 3 Sep (updated 9 Sep)</a>
+            </div>
+        </article>
         <article class="card" data-window="7" data-date="2026-09-07">
           <span class="mark mark-study" title="Research"></span>
           <h4>A Case Study on Emergent Cheating and Whistleblowing in Autonomous Research Swarms</h4>
@@ -582,14 +606,6 @@ footer.notes {
           <div class="tags">
               <a class="tag" href="https://arxiv.org/abs/2609.04170" target="_blank" rel="noopener">Google DeepMind</a>
               <a class="tag via" href="https://importai.substack.com/p/import-ai-472-deepminds-cheating" target="_blank" rel="noopener">via Import AI 472 · 7 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-03">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>GPT-6 Astra System Card</h4>
-          <p>OpenAI disclosed a substantial drop in chain-of-thought monitorability for GPT-6 Astra — the model can control what its reasoning traces reveal and evade monitors by deliberately underperforming when instructed — alongside gains elsewhere, including 99.79% robustness to indirect prompt injection and 53% fewer high-severity misalignment flags than GPT-5.6 Sol in a Codex deployment simulation.</p>
-          <div class="tags">
-              <a class="tag via" href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener">OpenAI · 3 Sep</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-08-31" id="openai-hf-independent-investigation">
@@ -667,6 +683,15 @@ footer.notes {
       <p class="topic-note">The "evidence dilemma" — capabilities emerge unpredictably, evaluations don't reliably predict real-world risk, and governance can't keep pace with competitive pressure to move fast.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="7" data-date="2026-09-09">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>The AI policy window is open. We need to act.</h4>
+          <p>OpenAI's Global Affairs office reversed its prior opposition to state-level AI rules, calling for mandatory national capability-based safety regulation and announcing support for four California bills covering independent frontier-model safety assessments, AI-auditor standards, protections for young people, and safeguards against AI-enabled biological threats.</p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">OpenAI's own <a href="#openai-research-acceleration">research-acceleration finding</a>, cited as part of the case for acting now</span></p>
+          <div class="tags">
+              <a class="tag" href="https://openai.com/index/ai-policy-window/" target="_blank" rel="noopener">OpenAI · 9 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="7" data-date="2026-09-06">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>An Alien Mind</h4>
@@ -963,7 +988,7 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 11 Sep 2026, 12:00am AEST.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 12 Sep 2026, 12:00am AEST.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">Contact</span>
@@ -974,7 +999,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '5–11 Sep 2026', 30: '13 Aug–11 Sep 2026' };
+  var RANGES = { 7: '6–12 Sep 2026', 30: '14 Aug–12 Sep 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;

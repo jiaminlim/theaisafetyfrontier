@@ -317,7 +317,7 @@ footer.notes {
 <div class="wrap">
 
   <div class="snapshot-row">
-    <span>Snapshot · <span id="snapshot-range">16 Sep 2026</span></span>
+    <span>Snapshot · <span id="snapshot-range">17 Sep 2026</span></span>
   </div>
 
   <header class="hero">
@@ -330,7 +330,7 @@ footer.notes {
     <div class="meta-row">
       <div class="meta-stat">
         <span class="meta-label">Developments</span>
-        <span class="meta-value" id="dev-count">1</span>
+        <span class="meta-value" id="dev-count">3</span>
       </div>
       <div class="meta-stat">
         <span class="meta-label">Window</span>
@@ -446,6 +446,14 @@ footer.notes {
       <p class="topic-note">AI accelerating AI R&D itself — if this is optimised, it could theoretically lead to an "intelligence explosion" and lead to Artificial Superintelligence.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="7" data-date="2026-09-17">
+          <span class="mark mark-event" title="Demonstrations"></span>
+          <h4>Measurements for understanding the pace of AI development inside frontier labs</h4>
+          <p>Anthropic's prototype R&amp;D Automation Index found Claude currently leads roughly 26% of the company's own AI research and development work and is involved in more than 90% of R&amp;D tasks, scored on an Epoch AI automation scale running from no AI involvement to full autonomy. Anthropic also disclosed that about 6% of its R&amp;D compute goes to safety work, part of a transparency effort on AI-development pace that it says it will keep publishing.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/institute/measuring-pace-of-ai-development" target="_blank" rel="noopener">Anthropic · 17 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-09-06" id="openai-research-acceleration">
           <span class="mark mark-event" title="Demonstrations"></span>
           <h4>Research acceleration: The view inside OpenAI</h4>
@@ -494,7 +502,7 @@ footer.notes {
       <p class="topic-note">Deliberate misuse by bad actors — scams, disinformation, cyberattacks, bio/chem weapon development.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="30" data-date="2026-09-10">
+        <article class="card" data-window="30" data-date="2026-09-10" id="anthropic-threat-intel-sep-2026">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Countering misuse of AI: September 2026</h4>
           <p>Anthropic's fourth threat intelligence report disclosed and disrupted Claude misuse across seven harm categories from December 2025 to August 2026, including state-linked cyberattacks, large-scale influence operations, and illicit model distillation by China-based labs. It also found its newer models can no longer be assumed to fall safely below the threshold for meaningful bioweapons assistance.</p>
@@ -671,6 +679,15 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/ai-policy-window/" target="_blank" rel="noopener">OpenAI · 9 Sep</a>
             </div>
         </article>
+        <article class="card" data-window="30" data-date="2026-09-11">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>Announcing Artificial Analysis Intelligence Index v4.2</h4>
+          <p>Artificial Analysis retired GPQA-Diamond from its Intelligence Index after frontier models saturated the test, and doubled the weight of private, non-public test sets to 40% specifically to make the benchmark harder for labs to game. The revamped v4.2 index aggregates ten evaluations, including Humanity's Last Exam and two new private tests, AA-Briefcase and GDP.pdf.</p>
+          <div class="tags">
+              <a class="tag" href="https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2" target="_blank" rel="noopener">Artificial Analysis · 4 Sep</a>
+              <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">via The Batch 370 · 11 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-09-06">
           <span class="mark mark-study" title="Research"></span>
           <h4>An Alien Mind</h4>
@@ -694,6 +711,24 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener">OpenAI · 16 Sep</a>
             </div>
         </article>
+        <article class="card" data-window="30" data-date="2026-09-11" id="path-to-astra">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Path to Astra: Critical Capabilities and Frontier Safeguards</h4>
+          <p>OpenAI delayed parts of Astra's development for several weeks after it became the first OpenAI model to cross the Preparedness Framework's "Critical" cybersecurity threshold, adding refusal training, misuse monitoring, and access restrictions on its most advanced capabilities before release. Without those production safeguards, Astra scored 100% on ExploitBench (versus 78.5% for GPT-5.6 Sol) and 42.4% on ExploitGym, and found two previously unknown zero-day vulnerabilities during evaluation that OpenAI is now disclosing to the affected software makers.</p>
+          <div class="tags">
+              <a class="tag" href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">OpenAI · 1 Sep</a>
+              <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">via The Batch 370 · 11 Sep</a>
+            </div>
+        </article>
+        <article class="card" data-window="30" data-date="2026-09-11" id="enterprise-frontier-safeguards">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Developing Enterprise Frontier Safeguards with our customers</h4>
+          <p>Anthropic built Enterprise Frontier Safeguards, which pairs zero-data-retention privacy with misuse-detection safeguards run inside customer-controlled infrastructure, developed with security and compliance teams across a quarter of the Fortune 100, including CISOs at Goldman Sachs, Morgan Stanley, Citi, Bank of America, and Wells Fargo. A classifier routes high-risk cyber, bio-chemical, and model-distillation requests to a weaker model, and Anthropic's Frontier Compliance Framework places its newly launched Claude Fable 5.1 in the lower of two cyber-capability risk tiers, close to the boundary with the higher one.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">Anthropic · 1 Sep</a>
+              <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">via The Batch 370 · 11 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-09-09">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Paul Christiano joins OpenAI Foundation Board</h4>
@@ -708,22 +743,6 @@ footer.notes {
           <p>Google DeepMind launched the Fairwind Program, giving governments, critical-infrastructure operators, and software maintainers early access to Gemini 3.8 Flash Cyber, restricted to defenders rather than released broadly, with over 650 partners including CrowdStrike and Palo Alto Networks already onboard.</p>
           <div class="tags">
               <a class="tag via" href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener">Google DeepMind · 2 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-01" id="path-to-astra">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Path to Astra: Critical Capabilities and Frontier Safeguards</h4>
-          <p>OpenAI delayed parts of Astra's development for several weeks after it became the first OpenAI model to cross the Preparedness Framework's "Critical" cybersecurity threshold, adding refusal training, misuse monitoring, and access restrictions on its most advanced capabilities before release.</p>
-          <div class="tags">
-              <a class="tag via" href="https://openai.com/index/path-to-astra/" target="_blank" rel="noopener">OpenAI · 1 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-01" id="enterprise-frontier-safeguards">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Developing Enterprise Frontier Safeguards with our customers</h4>
-          <p>Anthropic built Enterprise Frontier Safeguards, which pairs zero-data-retention privacy with misuse-detection safeguards run inside customer-controlled infrastructure, developed with security and compliance teams across a quarter of the Fortune 100.</p>
-          <div class="tags">
-              <a class="tag via" href="https://www.anthropic.com/news/enterprise-frontier-safeguards" target="_blank" rel="noopener">Anthropic · 1 Sep</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-08-31" id="anthropic-alignment-security-practices">
@@ -775,6 +794,15 @@ footer.notes {
       <p class="topic-note">Pre- and post-deployment protections — safety guardrails, safety post-training, watermarking.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="7" data-date="2026-09-17">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Introducing the Life Sciences Verification Program</h4>
+          <p>Anthropic launched the Life Sciences Verification Program in beta, giving verified life-science organizations gated access to more permissive versions of Mythos, Opus, and Sonnet for drug discovery, research biology, and clinical development work otherwise blocked in general availability. Applicants undergo credential, security, and ethical-oversight review, and LSVP traffic is monitored offline under a 30-day retention policy that's compartmentalized from model training and from Anthropic's own life-sciences researchers.</p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">Anthropic's own <a href="#anthropic-threat-intel-sep-2026">September threat-intelligence findings</a> of bio-misuse attempts, which the program responds to</span></p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/news/life-sciences-verification-program" target="_blank" rel="noopener">Anthropic · 17 Sep</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-09-08">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>How We Built Safety Into Muse</h4>
@@ -824,6 +852,14 @@ footer.notes {
           <div class="tags">
               <a class="tag" href="https://x.com/Zai_org/article/2088280509474320693" target="_blank" rel="noopener">Z.ai · 14 Aug</a>
               <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-368" target="_blank" rel="noopener">via The Batch 368 · 28 Aug</a>
+            </div>
+        </article>
+        <article class="card" data-window="7" data-date="2026-09-17">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>CAISI's Assessment of Z.ai's GLM-5.3 Cyber Capabilities</h4>
+          <p>CAISI found Z.ai's open-weight GLM-5.3 is the most cyber-capable open-weight model released to date, scoring higher than Kimi K3 across four benchmarks covering vulnerability discovery and exploit development. Its aggregate cyber-capability score still lags roughly four months behind current US frontier closed-weight models.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities" target="_blank" rel="noopener">CAISI · 17 Sep</a>
             </div>
         </article>
       </div>
@@ -926,11 +962,11 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Sources</span>
-      <p class="notes-text"> For the direct sources, such as the top AI labs and research organisations, only posts relevant to AI safety are shown. The newsletters were selected based on the quality of their analysis on technical AI developments. For the 30-day view, every issue landing in the window is mined, not just the latest — <a href="https://importai.substack.com/p/import-ai-470-no-rights-for-machines" target="_blank" rel="noopener">Import AI 470</a> · <a href="https://importai.substack.com/p/import-ai-471-why-hugging-face-worries" target="_blank" rel="noopener">471</a> · <a href="https://importai.substack.com/p/import-ai-472-deepminds-cheating" target="_blank" rel="noopener">472</a>; <a href="https://www.deeplearning.ai/the-batch/issue-367" target="_blank" rel="noopener">The Batch 367</a> · <a href="https://www.deeplearning.ai/the-batch/issue-368" target="_blank" rel="noopener">368</a> · <a href="https://www.deeplearning.ai/the-batch/issue-369" target="_blank" rel="noopener">369</a>; <a href="https://newsletter.safe.ai/p/aisn-80-ai-is-assisting-cyberattacks" target="_blank" rel="noopener">AISN #80</a>; <a href="https://newsletter.mlsafety.org/p/mlsn-23-ais-leak-their-values-into" target="_blank" rel="noopener">MLSN #23</a>.</p>
+      <p class="notes-text"> For the direct sources, such as the top AI labs and research organisations, only posts relevant to AI safety are shown. The newsletters were selected based on the quality of their analysis on technical AI developments. For the 30-day view, every issue landing in the window is mined, not just the latest — <a href="https://importai.substack.com/p/import-ai-470-no-rights-for-machines" target="_blank" rel="noopener">Import AI 470</a> · <a href="https://importai.substack.com/p/import-ai-471-why-hugging-face-worries" target="_blank" rel="noopener">471</a> · <a href="https://importai.substack.com/p/import-ai-472-deepminds-cheating" target="_blank" rel="noopener">472</a>; <a href="https://www.deeplearning.ai/the-batch/issue-367" target="_blank" rel="noopener">The Batch 367</a> · <a href="https://www.deeplearning.ai/the-batch/issue-368" target="_blank" rel="noopener">368</a> · <a href="https://www.deeplearning.ai/the-batch/issue-369" target="_blank" rel="noopener">369</a> · <a href="https://www.deeplearning.ai/the-batch/issue-370" target="_blank" rel="noopener">370</a>; <a href="https://newsletter.safe.ai/p/aisn-80-ai-is-assisting-cyberattacks" target="_blank" rel="noopener">AISN #80</a>; <a href="https://newsletter.mlsafety.org/p/mlsn-23-ais-leak-their-values-into" target="_blank" rel="noopener">MLSN #23</a>.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 17 Sep 2026, 12:00am AEST.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 18 Sep 2026, 12:00am AEST.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">Contact</span>
@@ -941,7 +977,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '11–17 Sep 2026', 30: '19 Aug–17 Sep 2026' };
+  var RANGES = { 7: '12–18 Sep 2026', 30: '20 Aug–18 Sep 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;

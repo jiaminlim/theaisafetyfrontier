@@ -143,6 +143,8 @@ Sits between the body `<p>` and `.tags`. Each clause is its own `.rel` span; the
 
 **Each clause must read standalone** — no "and its…", no "its later…" — because any clause can become the first one shown. The separator comma is generated in CSS.
 
+**Don't overstate what the connection actually is.** A related-note clause must not claim or imply that one source explicitly discusses, cites, or responds to the other unless it actually does — check the source text, don't infer from thematic overlap alone. Caught 26 Sep 2026: a clause said Amodei's "We Must Pace the Frontier" essay was "an example of the kind of unilateral pacing decision this agenda argues should rest on better research," implying the "Pacing the Frontier: An Agenda" paper was reasoning about Amodei's specific decision — it wasn't; the paper cites its own examples (Glasswing, Trusted Access for Cyber) and never mentions Amodei. When two cards are only thematically adjacent (same topic, no textual link), use conservative framing like "also discusses pacing the frontier" rather than characterizing one as reasoning about or responding to the other.
+
 **Bar for adding one:** it must bridge subtopics a reader wouldn't otherwise see together, and the link must be tight (same incident, same product line, direct causal link). Not "these happened the same week". Same-subtopic pairs don't need one.
 
 ---

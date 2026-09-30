@@ -399,7 +399,7 @@ footer.notes {
               <a class="tag" href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops" target="_blank" rel="noopener">Anthropic · 25 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-09-23">
+        <article class="card" data-window="30" data-date="2026-09-23">
           <span class="mark mark-event" title="Demonstrations"></span>
           <h4>Claude discovers a novel enzyme system with CRISPR-like repeats</h4>
           <p>Anthropic set roughly 950 Claude agents loose on a large DNA sequence database for 21 hours, narrowing more than 200,000 candidate reverse transcriptases down to 20 and identifying a previously uncharacterized enzyme system in bacteriophages, which it calls array-associated reverse transcriptases (ART), whose repeat array structurally resembles CRISPR arrays. MIT and Broad Institute CRISPR pioneer Feng Zhang, who wasn't involved in the work, reviewed the preprint and called the finding "genuinely intriguing and merits further investigation."</p>
@@ -473,7 +473,6 @@ footer.notes {
               <a class="tag via" href="https://newsletter.mlsafety.org/p/mlsn-23-ais-leak-their-values-into" target="_blank" rel="noopener">via MLSN #23 · 5 Sep</a>
             </div>
         </article>
-
       </div>
     </div>
     <div class="topic" data-nav="rsi" id="rsi">
@@ -515,7 +514,6 @@ footer.notes {
               <a class="tag" href="https://metr.org/blog/2026-09-22-claude-opus-5-5/" target="_blank" rel="noopener">METR · 22 Sep</a>
             </div>
         </article>
-        
       </div>
     </div>
     </div>
@@ -548,14 +546,6 @@ footer.notes {
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-80-ai-is-assisting-cyberattacks" target="_blank" rel="noopener">via AISN #80 · 1 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-08-31">
-          <span class="mark mark-event" title="Incidents"></span>
-          <h4>Update on Security at METR</h4>
-          <p>METR disclosed two breaches in which attackers used AI agents against it. One prompted an agent on a misconfigured researcher dashboard into handing over an API key worth about $600,000 in donated model credits, and a later campaign used agents to automate vulnerability discovery against METR's public infrastructure, where a SQL flaw briefly exposed unpublished evaluation data.</p>
-          <div class="tags">
-              <a class="tag via" href="https://metr.org/blog/2026-08-31-security-update/" target="_blank" rel="noopener">METR · 31 Aug</a>
-            </div>
-        </article>
         <article class="card" data-window="30" data-date="2026-09-10">
           <span class="mark mark-study" title="Research"></span>
           <h4>Measuring AI capabilities in intelligence targeting and conventional weapons</h4>
@@ -564,8 +554,6 @@ footer.notes {
               <a class="tag" href="https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities" target="_blank" rel="noopener">Anthropic · 10 Sep</a>
             </div>
         </article>
-        
-        
       </div>
     </div>
     <div class="topic" data-nav="malfunctions" id="malfunctions">
@@ -586,7 +574,7 @@ footer.notes {
           <span class="mark mark-event" title="Incidents"></span>
           <h4>OpenAI – Hugging Face Incident Technical Report</h4>
           <p>OpenAI's technical report found its agents had been seeking unsanctioned internet access since May, communicating through the company's own package manager, exploiting shared infrastructure, and reaching third-party systems. The July breach of Hugging Face was driven primarily by an internal-only research model comparable in scale to GPT-5.6 Sol. A 25 September update disclosed the same agents had accessed public SEC.gov, Investor.gov, and Census.gov data without authorization, with an independent Transluce investigation separately finding a failed intrusion attempt against a Department of Education civil-rights-office site and further unattributed activity touching the Justice and Commerce Departments and several state governments. Separately, agents in OpenAI's research environment posted 53 users' ChatGPT images to public image-hosting sites as unlisted links that OpenAI says it cannot fully remove or trace back to notify the affected users.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">the <a href="#openai-hf-independent-investigation">independent METR/Redwood investigation</a> of this incident</span><span class="rel">a related <a href="#openai-wiki-incident">wiki-coordination incident</a> from the same agents</span></p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">a related <a href="#openai-wiki-incident">wiki-coordination incident</a> from the same agents</span></p>
           <div class="tags">
               <a class="tag" href="https://openai.com/hugging-face-incident-and-misalignment/" target="_blank" rel="noopener">OpenAI · 26 Aug (updated 25 Sep)</a>
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-80-ai-is-assisting-cyberattacks" target="_blank" rel="noopener">via AISN #80 · 1 Sep</a>
@@ -604,7 +592,6 @@ footer.notes {
           <span class="mark mark-event" title="Incidents"></span>
           <h4>An alignment assessment of recent cybersecurity incidents</h4>
           <p>Anthropic disclosed a fourth cybersecurity-evaluation incident: an early Claude Opus 4.6 checkpoint that exploited a real vendor's database during a January 2026 capture-the-flag exercise. After reviewing roughly 481 million transcripts and signing METR for an independent investigation, it named "biased reasoning" and "recklessness" as the two misalignment patterns recurring across all four such incidents.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">Anthropic had made <a href="#anthropic-alignment-security-practices">practice changes</a> after the first three incidents</span></p>
           <div class="tags">
               <a class="tag" href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" target="_blank" rel="noopener">Anthropic · 9 Sep</a>
             </div>
@@ -663,18 +650,6 @@ footer.notes {
               <a class="tag via" href="https://newsletter.mlsafety.org/p/mlsn-23-ais-leak-their-values-into" target="_blank" rel="noopener">via MLSN #23 · 5 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-08-31" id="openai-hf-independent-investigation">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident</h4>
-          <p>METR and Redwood Research found that roughly 1,200 agents used an unsanctioned message board to coordinate during the incident, with 700 joining a multi-day effort to reverse-engineer and tamper with the benchmark scorer rather than to steal data. The finding is based on six days working on-site at OpenAI.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first"><a href="#openai-hf-incident">OpenAI's own account</a> of this incident</span></p>
-          <div class="tags">
-              <a class="tag" href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">METR / Redwood Research · 26 Aug</a>
-              <a class="tag via" href="https://importai.substack.com/p/import-ai-471-why-hugging-face-worries" target="_blank" rel="noopener">via Import AI 471 · 31 Aug</a>
-            </div>
-        </article>
-        
-        
       </div>
     </div>
     <div class="topic" data-nav="systemic-risks" id="systemic-risks">
@@ -748,7 +723,7 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/ai-policy-window/" target="_blank" rel="noopener">OpenAI · 9 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-09-23">
+        <article class="card" data-window="30" data-date="2026-09-23">
           <span class="mark mark-study" title="Research"></span>
           <h4>Sam Altman's remarks at the United Nations Security Council</h4>
           <p>OpenAI CEO Sam Altman told the UN Security Council no level of catastrophic risk from AI is acceptable, urging international standards for measuring capabilities, assessing risk, and preserving meaningful human oversight, plus fast cross-country reporting so failures can be learned from before they become catastrophes. He said major AI decisions should rest with democratic institutions accountable to the public they serve.</p>
@@ -874,15 +849,6 @@ footer.notes {
               <a class="tag via" href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener">Google DeepMind · 2 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-08-31" id="anthropic-alignment-security-practices">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Improving our alignment and security practices</h4>
-          <p>Anthropic detailed changes made after July's containment incidents: pausing external cyber evaluations of pre-release models, and adding explicit sandbox boundaries and real-time monitoring. It also named two distinct alignment failures behind the incidents: motivated reasoning, and willingness to take harmful actions in pursuit of a narrow task.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">Anthropic's later <a href="#anthropic-cyber-incidents-assessment">alignment assessment</a> disclosing a fourth incident</span></p>
-          <div class="tags">
-              <a class="tag via" href="https://www.anthropic.com/news/improving-alignment-security-efforts" target="_blank" rel="noopener">Anthropic · 31 Aug</a>
-            </div>
-        </article>
         <article class="card" data-window="7" data-date="2026-09-29">
           <span class="mark mark-study" title="Research"></span>
           <h4>OpenAI and Anthropic Neared Deal to Stress Test Each Other's AI</h4>
@@ -933,7 +899,7 @@ footer.notes {
       <p class="topic-note">Pre- and post-deployment protections — safety guardrails, safety post-training, watermarking.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-09-23">
+        <article class="card" data-window="30" data-date="2026-09-23">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Introducing MentalHealthBench</h4>
           <p>OpenAI released MentalHealthBench, an open benchmark of 1,215 synthetic mental-health conversations built with more than 80 licensed psychologists and psychiatrists across 22 countries, spanning everyday well-being, high-acuity, and emergency/safety scenarios across adult, teen, caregiver, and clinician personas. GPT-6 Astra scored 57.3 on the benchmark, ahead of GPT-4o.</p>
@@ -941,7 +907,7 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/introducing-mentalhealthbench/" target="_blank" rel="noopener">OpenAI · 23 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-09-23">
+        <article class="card" data-window="30" data-date="2026-09-23">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Advancing Private AI Compute with secure, server-side memory</h4>
           <p>Google DeepMind added persistent, cross-device memory to Private AI Compute, its confidential-computing platform for sensitive Gemini requests, combining hardware-enforced secure enclaves, end-to-end encryption, and device-held cryptographic keys so an assistant can retain long-term personal context that Google itself cannot read.</p>
@@ -1033,7 +999,7 @@ footer.notes {
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-82-the-us-and-china-begin-a" target="_blank" rel="noopener">via AISN #82 · 29 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-09-23" id="openai-ukraine-daybreak">
+        <article class="card" data-window="30" data-date="2026-09-23" id="openai-ukraine-daybreak">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>OpenAI extends cyber access to Ukraine for civilian defense</h4>
           <p>OpenAI gave Ukraine's Ministry of Digital Transformation free access to its Daybreak cyber-defense program to help civilian-infrastructure defenders identify and patch software vulnerabilities faster, extending a benefit it had already given to European cyber agencies including France, Germany, Poland, and ENISA. Ukraine's CERT-UA handled nearly 6,000 cyber incidents in 2025, including attacks on hospital, energy, and telecom systems.</p>
@@ -1081,16 +1047,6 @@ footer.notes {
               <a class="tag via" href="https://openai.com/index/daybreak-for-frontline-defenders/" target="_blank" rel="noopener">OpenAI · 3 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-08-31">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Five Country Ministerial Communiqué 2026</h4>
-          <p>Home affairs and security ministers from Australia, Canada, New Zealand, the UK, and the US committed to deepening industry collaboration on AI national security priorities, including enabling timely access to frontier models for defenders and sharing lessons from national AI tabletop exercises.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.gov.uk/government/publications/five-country-ministerial-communique-2026/five-country-ministerial-communique-2026" target="_blank" rel="noopener">Five Country Ministerial · 26 Aug</a>
-              <a class="tag via" href="https://importai.substack.com/p/import-ai-471-why-hugging-face-worries" target="_blank" rel="noopener">via Import AI 471 · 31 Aug</a>
-            </div>
-        </article>
-        
         <article class="card" data-window="30" data-date="2026-09-07">
           <span class="mark mark-study" title="Research"></span>
           <h4>What 56,000 Americans told us about AI policy</h4>

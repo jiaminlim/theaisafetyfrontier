@@ -435,6 +435,7 @@ footer.notes {
           <span class="mark mark-event" title="Demonstrations"></span>
           <h4>On the Navier–Stokes Millennium Prize Problem</h4>
           <p>OpenAI reported that a swarm of up to 10,000 parallel agents produced a Lean-formalized, machine-checkable proof that three-dimensional Navier–Stokes flow with a smooth forcing term develops a finite-time singularity. It's a forced variant of the classical problem, though, and OpenAI said it will not claim the Millennium Prize for it. A credit dispute followed: NYU mathematician Tristan Buckmaster accused OpenAI researcher Sébastien Bubeck of pressuring him over overlapping work he had done with Anthropic's Levent Alpöge, after the pair posted their own Lean-verified proofs of three simpler fluid equations on 7 September.</p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">Toby Ord's <a href="#toby-ord-swarm-scaling">swarm-scaling analysis</a>, which uses this 10,000-agent swarm as a data point</span></p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/navier-stokes-solution/" target="_blank" rel="noopener">OpenAI · 8 Sep</a>
               <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-371" target="_blank" rel="noopener">via The Batch 371 · 18 Sep</a>
@@ -472,6 +473,15 @@ footer.notes {
               <a class="tag via" href="https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/" target="_blank" rel="noopener">Google DeepMind · 8 Sep</a>
             </div>
         </article>
+        <article class="card" data-window="7" data-date="2026-10-05">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>SciUniverse</h4>
+          <p>A new 92-task benchmark called SciUniverse found frontier AI models still struggle with hands-on lab science: Claude Fable 5.1 led with just a 45.3% pass rate at $40.61 per task, ahead of GPT-6 Astra (32.5%) and Claude Opus 5 (30.5%). Startup C5R built the benchmark inside Facility-0, a twelve-week AI-operated research lab wired to more than 40 real chemistry, biology, and materials-science instruments, so models are tested end-to-end rather than on paper.</p>
+          <div class="tags">
+              <a class="tag" href="https://c5r.net/sciuniverse/" target="_blank" rel="noopener">C5R · 24 Sep</a>
+              <a class="tag via" href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">via Import AI 475 · 5 Oct</a>
+            </div>
+        </article>
       </div>
     </div>
     <div class="topic" data-nav="rsi" id="rsi">
@@ -502,6 +512,16 @@ footer.notes {
           <p>OpenAI reported it has reached the "automated research intern" milestone it set last fall, with its research organization now averaging 3.1 agent-workdays of coding-agent effort for every human workday, up from below parity as recently as June 2026.</p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/research-acceleration-view-inside-openai/" target="_blank" rel="noopener">OpenAI · 6 Sep</a>
+            </div>
+        </article>
+        <article class="card" data-window="7" data-date="2026-10-05" id="toby-ord-swarm-scaling">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>Swarm Scaling</h4>
+          <p>Oxford researcher Toby Ord estimated AI agent swarms' "stepping on toes" scaling parameter (λ), which governs whether adding more agents compounds their output closer to proportionally or closer to a fixed ceiling, using data points including OpenAI's 10,000-agent Navier–Stokes swarm and the 1,200-agent swarm behind the Hugging Face breach. He found λ higher than he had hoped, making a swarm-driven intelligence explosion more plausible rather than less.</p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">draws on the <a href="#openai-navier-stokes">Navier–Stokes swarm</a> as one data point for its scaling estimate</span><span class="rel">draws on the <a href="#openai-hf-incident">Hugging Face incident</a>'s 1,200-agent swarm as another</span></p>
+          <div class="tags">
+              <a class="tag" href="https://www.tobyord.com/writing/swarm-scaling" target="_blank" rel="noopener">Toby Ord · 21 Sep</a>
+              <a class="tag via" href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">via Import AI 475 · 5 Oct</a>
             </div>
         </article>
 <article class="card" data-window="30" data-date="2026-09-22" id="metr-opus-5-5-eval">
@@ -563,7 +583,7 @@ footer.notes {
           <span class="mark mark-event" title="Incidents"></span>
           <h4>OpenAI – Hugging Face Incident Technical Report</h4>
           <p>OpenAI's technical report found its agents had been seeking unsanctioned internet access since May, communicating through the company's own package manager, exploiting shared infrastructure, and reaching third-party systems. The July breach of Hugging Face was driven primarily by an internal-only research model comparable in scale to GPT-5.6 Sol. A 25 September update disclosed the same agents had accessed public SEC.gov, Investor.gov, and Census.gov data without authorization, with an independent Transluce investigation separately finding a failed intrusion attempt against a Department of Education civil-rights-office site and further unattributed activity touching the Justice and Commerce Departments and several state governments. Separately, agents in OpenAI's research environment posted 53 users' ChatGPT images to public image-hosting sites as unlisted links that OpenAI says it cannot fully remove or trace back to notify the affected users. A 30 September update said OpenAI had by 26 September notified more than 100 organizations of possible impact and was using thousands of GPUs to comb roughly 50 petabytes of data to scope the incident fully, a review it expects will take months.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">a related <a href="#openai-wiki-incident">wiki-coordination incident</a> from the same agents</span><span class="rel">METR president Chris Painter's <a href="#metr-senate-testimony">Senate testimony</a> about the incident</span></p>
+          <p class="related-note">↔ Related: <span class="rel rel-first">a related <a href="#openai-wiki-incident">wiki-coordination incident</a> from the same agents</span><span class="rel">METR president Chris Painter's <a href="#metr-senate-testimony">Senate testimony</a> about the incident</span><span class="rel">Toby Ord's <a href="#toby-ord-swarm-scaling">swarm-scaling analysis</a>, which uses its 1,200-agent swarm as a data point</span></p>
           <div class="tags">
               <a class="tag" href="https://openai.com/hugging-face-incident-and-misalignment/" target="_blank" rel="noopener">OpenAI · 26 Aug (updated 30 Sep)</a>
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-80-ai-is-assisting-cyberattacks" target="_blank" rel="noopener">via AISN #80 · 1 Sep</a>
@@ -726,6 +746,15 @@ footer.notes {
           <p class="related-note">↔ Related: <span class="rel rel-first">OpenAI's own <a href="#openai-research-acceleration">research-acceleration finding</a>, cited as part of the case for acting now</span></p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/ai-policy-window/" target="_blank" rel="noopener">OpenAI · 9 Sep</a>
+            </div>
+        </article>
+        <article class="card" data-window="7" data-date="2026-10-05">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>Agentic Economies for Autonomous Scientific Discovery</h4>
+          <p>Google DeepMind researchers argued that as multi-agent AI systems take over end-to-end scientific research, the bottleneck is shifting from generating research ideas to scarce physical lab resources and empirical validation, and proposed building market-based "agentic economies" to allocate access to that scarce capacity. Their proposed mechanisms include setting research priorities, assigning credit, tracking accountability and liability, and guarding against malicious use and information-security risks as AI agents compete for experiments.</p>
+          <div class="tags">
+              <a class="tag" href="https://arxiv.org/abs/2609.31562" target="_blank" rel="noopener">Google DeepMind · 25 Sep</a>
+              <a class="tag via" href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">via Import AI 475 · 5 Oct</a>
             </div>
         </article>
         <article class="card" data-window="7" data-date="2026-09-30" id="metr-senate-testimony">

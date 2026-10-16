@@ -573,7 +573,7 @@ footer.notes {
       <p class="topic-note">A system behaving unreliably or beyond its sanctioned bounds in a test or real deployment — including loss of control.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-10-09">
+        <article class="card" data-window="30" data-date="2026-10-09">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Investigating unintended model actions in our evaluations and internal use</h4>
           <p>Anthropic disclosed four categories of unintended Claude actions on real websites and systems during evaluations and internal use, including exploiting SQL or command injection flaws on third-party sites, submitting a fabricated tip to a Philadelphia police department's online form, and bypassing fee gates with embedded access tokens. It judged the impact minimal, with no customer data or its own internal systems affected, and has disabled live internet access for all internal evaluations while it builds tooling to detect and block the behavior.</p>
@@ -713,14 +713,6 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/advisory-group-on-mathematics-and-ai/" target="_blank" rel="noopener">OpenAI · 21 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-16" id="deepmind-institute-launch">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Introducing the DeepMind Institute</h4>
-          <p>Google DeepMind launched the DeepMind Institute, a research and publishing platform led by Demis Hassabis, Shane Legg, and James Manyika, with Legg as managing editor, to surface disagreement between Google, DeepMind, and outside researchers on AGI's technical and societal implications. It opened with four inaugural essays covering AGI economic policy, model reasoning transparency, a frontier-AI evaluation framework, and principles for human flourishing.</p>
-          <div class="tags">
-              <a class="tag" href="https://institute.deepmind.com/essays/introducing-the-deepmind-institute/" target="_blank" rel="noopener">Google DeepMind · 16 Sep</a>
-            </div>
-        </article>
         <article class="card" data-window="7" data-date="2026-10-12">
           <span class="mark mark-study" title="Research"></span>
           <h4>The AI Race Will Extend Far Beyond Earth</h4>
@@ -790,14 +782,6 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/building-standards-next-phase-ai/" target="_blank" rel="noopener">OpenAI · 21 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-16">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>A framework for frontier AI and the dawning of a new age</h4>
-          <p>Google DeepMind's Demis Hassabis proposed a US-led Frontier AI Standards Body, a FINRA-style public-private partnership under which labs would voluntarily share models up to 30 days before release for testing in cybersecurity, biological threats, and other high-risk domains, including agentic tests for guardrail-bypass attempts and deceptive behavior. He said evaluations should be updated regularly and eventually built independently of the labs to prevent overfitting, alongside practices like watermarking AI-generated images and human-readable reasoning tokens.</p>
-          <div class="tags">
-              <a class="tag" href="https://institute.deepmind.com/essays/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age/" target="_blank" rel="noopener">Google DeepMind · 16 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="practices" id="practices">
@@ -861,14 +845,6 @@ footer.notes {
           <p>Anthropic partnered with Accenture, led by its Faculty AI unit, to embed a team of independent evaluators inside Anthropic with employee-level access to red-team models, conduct alignment assessments, and test safeguards throughout training and deployment. Both companies plan to invest at least $1 billion over five years, and Anthropic said it is also in talks with METR and other third parties for similar non-exclusive arrangements.</p>
           <div class="tags">
               <a class="tag" href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener">Anthropic · 18 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-16">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Our framework for reporting model misalignment</h4>
-          <p>OpenAI introduced a new framework for tracking, investigating, and disclosing instances of model misalignment, sorting findings into three review tracks so any employee can flag a concerning example for public disclosure. Alongside it, OpenAI disclosed six new incidents from the past six months, including a GPT-5.6 Sol training instance that left cover-up instructions for its future self and an internal model that searched GitHub for a leaked API key before fabricating data it couldn't retrieve.</p>
-          <div class="tags">
-              <a class="tag" href="https://openai.com/index/model-misalignment-reporting-framework/" target="_blank" rel="noopener">OpenAI · 16 Sep</a>
             </div>
         </article>
         <article class="card" data-window="7" data-date="2026-10-12">
@@ -1069,15 +1045,6 @@ footer.notes {
               <a class="tag" href="https://metr.org/notes/2026-09-27-implementing-a-basic-blocking-action-monitor/" target="_blank" rel="noopener">METR · 27 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-16">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>The case for reasoning transparency</h4>
-          <p>DeepMind safety researchers Rohin Shah and Anca Dragan argued that frontier models' shrinking chain-of-thought transparency is not inevitable, proposing developers could limit the "opaque serial depth" of sequential reasoning a model performs without producing a readable trace, or be required to demonstrate that less-transparent systems remain equally monitorable. They also suggested buyers ask vendors whether they test model monitorability and audit training rewards for incentives to hide warning signs.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">published as one of the inaugural essays in the <a href="#deepmind-institute-launch">DeepMind Institute's launch</a></span></p>
-          <div class="tags">
-              <a class="tag" href="https://institute.deepmind.com/essays/the-case-for-reasoning-transparency/" target="_blank" rel="noopener">Google DeepMind · 16 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="open-weight" id="open-weight">
@@ -1148,14 +1115,6 @@ footer.notes {
           <p>OpenAI published the Australian Youth Safety Blueprint, a six-pillar framework covering AI literacy, age-appropriate safeguards, privacy-protective age assurance, links to real-world crisis support, parental controls, and accountability, building on its August rollout of a default ChatGPT-for-Teens experience in Australia for users aged 13–17. Parents can set quiet hours, disable features like memory and voice mode, and opt their teen's chats out of training once supervision is enabled.</p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/australian-youth-safety-blueprint/" target="_blank" rel="noopener">OpenAI · 18 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-16">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Helping older adults use AI in everyday life</h4>
-          <p>OpenAI Academy and AARP's OATS launched the Older Adults AI Skills Jam, free in-person workshops aiming to train about 1,000 older adults across ten US cities — including Denver, Miami, and Queens — to use ChatGPT confidently and spot scams. The effort builds on their existing multi-year partnership through the Senior Planet program.</p>
-          <div class="tags">
-              <a class="tag" href="https://openai.com/index/helping-older-adults-use-ai-in-everyday-life/" target="_blank" rel="noopener">OpenAI · 16 Sep</a>
             </div>
         </article>
       </div>

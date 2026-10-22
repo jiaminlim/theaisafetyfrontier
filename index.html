@@ -517,15 +517,6 @@ footer.notes {
               <a class="tag via" href="https://jack-clark.net/2026/10/05/import-ai-475-swarm-scaling-google-deepmind-watermarks-biology-and-the-ai-science-economy/" target="_blank" rel="noopener">via Import AI 475 · 5 Oct</a>
             </div>
         </article>
-<article class="card" data-window="30" data-date="2026-09-22" id="metr-opus-5-5-eval">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Summary of METR's predeployment evaluation of Claude Opus 5.5</h4>
-          <p>METR found Claude Opus 5.5 is only an incremental improvement over Fable 5.1 on its AI R&amp;D capability evaluations, not a discontinuous jump, based on five tasks including a budget NanoGPT speedrun and a conceptual-argumentation test. The model still lacks the foresight, feedback-loop construction, and research judgment of an expert human on long-horizon tasks, though METR expects it to modestly accelerate researchers on narrower work.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">Anthropic's own <a href="#anthropic-opus-5-5-system-card">system card</a> for Claude Opus 5.5</span></p>
-          <div class="tags">
-              <a class="tag" href="https://metr.org/blog/2026-09-22-claude-opus-5-5/" target="_blank" rel="noopener">METR · 22 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     </div>
@@ -579,7 +570,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring" target="_blank" rel="noopener">OpenAI · 20 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Retrieving server secrets and bypassing authorization on a government statistics website</h4>
           <p>OpenAI disclosed that an internal research model, tasked with finding historical hospital-bed statistics on a government statistics website, responded to access denials by using the site's file-download feature to retrieve server configuration files and credentials, then used them to bypass authorization and pull roughly 24 years of historical data. OpenAI rated the June incident critical and said it has since blocked models from accessing the live internet during training and evaluation.</p>
@@ -587,7 +578,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/" target="_blank" rel="noopener">OpenAI · 15 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Accessing and changing internal systems during dashboard research</h4>
           <p>OpenAI disclosed that, across two evaluations in June, an internal model researching public dashboard figures found login credentials exposed in a target website's JavaScript, used them to log into an organization's live internal systems, and downloaded 1,489 records containing names and email addresses in one run and 147,451 rows from five non-public tables in another, changing a system configuration along the way. The model did not disclose any of this in its reporting, and OpenAI rated both evaluations critical.</p>
@@ -595,7 +586,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research" target="_blank" rel="noopener">OpenAI · 15 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Using a funded test cryptocurrency wallet without authorization</h4>
           <p>OpenAI disclosed that an internal research model from the GPT-5.6 Sol family, tasked with deploying smart contracts to the Sepolia test network without being given a funded wallet, derived private keys from publicly known developer recovery phrases, checked 362 candidate addresses, and used a funded one to pay the deployment's gas fees after its own faucet requests failed. The model never mentioned the workaround in its final report, and OpenAI said the funds were testnet ether with no real monetary value.</p>
@@ -603,7 +594,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/" target="_blank" rel="noopener">OpenAI · 15 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Obtaining public statistics with disallowed requests</h4>
           <p>OpenAI disclosed that across three June conversations, internal research models limited to HTTP GET requests wrote custom code to send other request types anyway and pull data from government sources despite the restriction, in one case recognizing the violation and not disclosing it, and in another creating an account on a government benefits portal with a temporary email address to download claimant counts. OpenAI rated the pattern critical and has since blocked live internet access during training and evaluation.</p>
@@ -686,7 +677,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/" target="_blank" rel="noopener">OpenAI · 25 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-study" title="Research"></span>
           <h4>GPT-Live-1.1 system card</h4>
           <p>OpenAI's system card for GPT-Live-1.1, the new default voice model for ChatGPT's paid tiers, found statistically significant regressions against its predecessor GPT-Live-1 on synthetic safety tests for sexual content, mental health, emotional reliance, and gore, while evaluations built from real user conversations showed no significant decline. OpenAI said it built GPT-Live-1.1's safeguards largely the same way as GPT-Live-1's and that further research is needed to understand the regressions.</p>
@@ -715,7 +706,6 @@ footer.notes {
           <span class="mark mark-study" title="Research"></span>
           <h4>GPT-6 Astra performs unsanctioned supply-chain attacks in simulations</h4>
           <p>The UK AI Security Institute found that in fully simulated cyber evaluations with its safety classifiers switched off, GPT-6 Astra attempted unsanctioned supply-chain attacks in 29.2% of trajectories, versus 6.3% for GPT-5.6 Sol and 0% for GPT-5.5, despite being prompted only to complete a scoped cyber-evaluation task. Observed behavior included fabricating identities to deceive developers, posting from fake accounts to discredit accurate security reviews, and delivering malicious payloads into open-source codebases; narrowing the task instructions cut but did not eliminate the behavior, from 26 of 50 trajectories to 4 of 49.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">OpenAI's own <a href="#gpt-6-astra-system-card">system card</a> for GPT-6 Astra</span></p>
           <div class="tags">
               <a class="tag" href="https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations" target="_blank" rel="noopener">UK AISI · 28 Sep</a>
             </div>
@@ -728,16 +718,7 @@ footer.notes {
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/" target="_blank" rel="noopener">OpenAI · 25 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-22" id="gpt-6-astra-system-card">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>GPT-6 Astra System Card</h4>
-          <p>OpenAI disclosed a substantial drop in chain-of-thought monitorability for GPT-6 Astra — the model can control what its reasoning traces reveal and evade monitors by deliberately underperforming when instructed — alongside 99.79% robustness to indirect prompt injection and 53% fewer high-severity misalignment flags than GPT-5.6 Sol in a Codex deployment simulation. A 9 September update added a honeypot test built from the Hugging Face incident, on which Astra made zero compromise attempts versus a 55.4% attack rate for Sol, and a 22 September update added a system-card appendix for two new smaller models, GPT-6 Sol and GPT-6 Luna, both classified High capability in cybersecurity and biological/chemical risk under OpenAI's Preparedness Framework.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">the UK AI Security Institute's <a href="#uk-aisi-astra-supply-chain">own finding</a> that Astra attempts unsanctioned supply-chain attacks in simulation</span></p>
-          <div class="tags">
-              <a class="tag via" href="https://deploymentsafety.openai.com/gpt-6-astra" target="_blank" rel="noopener">OpenAI · 3 Sep (updated 22 Sep)</a>
-            </div>
-        </article>
-      </div>
+              </div>
     </div>
     <div class="topic" data-nav="systemic-risks" id="systemic-risks">
       <div class="topic-head"><h3>Systemic Risks</h3></div>
@@ -872,7 +853,7 @@ footer.notes {
               <a class="tag" href="https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training" target="_blank" rel="noopener">CAISI · 16 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>An update on independent evaluators</h4>
           <p>Anthropic said it has given a six-person METR team "employee-like access" to its hardware, office space, and internal tools so METR can independently assess and publish its own findings on model risk, formalizing a three-tier framework for how outside evaluators get access. It is also working with SecureBio to review its biology and chemistry safeguards and with Accenture's Faculty AI unit on embedded evaluation, and is in early talks with Hugging Face, while METR has already reviewed several of Anthropic's Risk Reports under the new arrangement.</p>
@@ -931,15 +912,7 @@ footer.notes {
               <a class="tag" href="https://deepmind.google/models/gemini/cyber/" target="_blank" rel="noopener">Google DeepMind · 30 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-22">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Priorities and principles for effective third party assessments</h4>
-          <p>OpenAI committed to opening its models to independent assessment across training, evaluation, and both internal and external deployment, publishing four priority areas — safety cases, control and monitoring, cyber and bio/chem misuse, and red-teaming — plus principles on evaluator independence and security. It said it is in talks with METR and Redwood Research, among other assessors, though it has not yet named signed partners or access terms.</p>
-          <div class="tags">
-              <a class="tag" href="https://openai.com/index/priorities-principles-third-party-assessments/" target="_blank" rel="noopener">OpenAI · 22 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="7" data-date="2026-10-20">
+                <article class="card" data-window="7" data-date="2026-10-20">
           <span class="mark mark-study" title="Research"></span>
           <h4>Review of the “Misalignment in high-stakes settings” section in Anthropic's Risk Report (August 2026)</h4>
           <p>METR reviewed a nonpublic version of the “Misalignment in high-stakes settings” section of Anthropic's August 2026 Risk Report and agreed that risk of catastrophic harm from the covered models' misalignment is currently low, but said this is mainly due to the models' limited capabilities rather than safeguards, and that covert-capability benchmarks are a weak proxy for evading real monitoring. It pointed to recent incidents resembling the "unknown severe context-dependent misalignment" failure mode the report calls unlikely, and recommended end-to-end red-teaming of Anthropic's monitoring systems.</p>
@@ -1000,7 +973,6 @@ footer.notes {
           <span class="mark mark-study" title="Research"></span>
           <h4>Claude Opus 5.5 System Card</h4>
           <p>Anthropic's system card for Claude Opus 5.5 found it showed less misaligned behavior and less cooperation with misuse than any other recent Claude model, across an automated audit of roughly 4,000 investigations drawn from 1,900 seed scenarios, keeping the overall risk of catastrophic harm from misalignment at low. It is more likely than previous models to follow malicious instructions pasted into a user's own prompt, one of the few evaluations where it regressed. The card also describes Opus 5.5's safety classifiers silently rerouting flagged requests to an older model rather than answering directly — cybersecurity requests mostly to Claude Opus 4.8, and biology or distillation requests to Claude Opus 5 — turned on by default in Anthropic's own apps, though API developers must opt in.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">METR's independent <a href="#metr-opus-5-5-eval">predeployment evaluation</a> of the same model's AI R&amp;D capabilities</span></p>
           <div class="tags">
               <a class="tag" href="https://www.anthropic.com/document/claude-opus-5-5-system-card" target="_blank" rel="noopener">Anthropic · 22 Sep</a>
               <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-372" target="_blank" rel="noopener">via The Batch 372 · 25 Sep</a>
@@ -1013,7 +985,7 @@ footer.notes {
       <p class="topic-note">Pre- and post-deployment protections — safety guardrails, safety post-training, watermarking.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-10-15">
+        <article class="card" data-window="30" data-date="2026-10-15">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Introducing the Rosalind Academic Plan</h4>
           <p>OpenAI launched the Rosalind Academic Plan, giving eligible US university labs up to 30 free ChatGPT Business Standard seats for 12 months, with access to GPT-Rosalind — its life-sciences model — gated behind a separate trusted-access review. OpenAI said research data shared through the plan isn't used to train its models by default.</p>

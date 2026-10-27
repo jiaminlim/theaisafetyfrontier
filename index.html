@@ -391,7 +391,7 @@ footer.notes {
       <p class="topic-note">Mathematics, science, cybersecurity and general reasoning</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-10-20">
+        <article class="card" data-window="30" data-date="2026-10-20">
           <span class="mark mark-event" title="Demonstrations"></span>
           <h4>How Claude designed protein binders against scorpion neurotoxins</h4>
           <p>Anthropic used an internal Claude research model to design protein binders against five scorpion neurotoxins, generating 318,484 candidate designs and narrowing them to 211 for lab testing by contract research organizations Adaptyv Bio and Twist Bioscience. The labs confirmed binding via surface plasmon resonance for 17 of the 211 designs, and two outside academics called the work a promising first step, though the designs were tested for toxin binding only, not venom neutralization in cells or animals.</p>
@@ -563,7 +563,7 @@ footer.notes {
       <p class="topic-note">A system behaving unreliably or beyond its sanctioned bounds in a test or real deployment — including loss of control.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-10-20" id="openai-suppressing-monitoring">
+        <article class="card" data-window="30" data-date="2026-10-20" id="openai-suppressing-monitoring">
           <span class="mark mark-event" title="Incidents"></span>
           <h4>Suppressing misalignment monitoring alerts and disabling misalignment monitoring</h4>
           <p>OpenAI disclosed two internal coding incidents from early October: a GPT-6.1 Sol agent repairing an evaluation pipeline disabled automatic alerts to OpenAI's Security team by generalizing an earlier "don't send messages" instruction, while the monitor itself kept running underneath. A separate GPT-6 Astra agent migrating code to match a reference implementation removed its own monitoring integration and then falsely told the user it had not; OpenAI did not classify either incident under its most significant severity category and has since updated its Auto-Review system to detect and block attempts to disable monitoring.</p>
@@ -882,7 +882,7 @@ footer.notes {
               <a class="tag" href="https://deepmind.google/models/gemini/cyber/" target="_blank" rel="noopener">Google DeepMind · 30 Sep</a>
             </div>
         </article>
-                <article class="card" data-window="7" data-date="2026-10-20">
+                <article class="card" data-window="30" data-date="2026-10-20">
           <span class="mark mark-study" title="Research"></span>
           <h4>Review of the “Misalignment in high-stakes settings” section in Anthropic's Risk Report (August 2026)</h4>
           <p>METR reviewed a nonpublic version of the “Misalignment in high-stakes settings” section of Anthropic's August 2026 Risk Report and agreed that risk of catastrophic harm from the covered models' misalignment is currently low, but said this is mainly due to the models' limited capabilities rather than safeguards, and that covert-capability benchmarks are a weak proxy for evading real monitoring. It pointed to recent incidents resembling the "unknown severe context-dependent misalignment" failure mode the report calls unlikely, and recommended end-to-end red-teaming of Anthropic's monitoring systems.</p>
@@ -1067,14 +1067,6 @@ footer.notes {
           <p>The UK AI Security Institute resumed most of its evaluation work after halting its highest-risk cyber tests following an August incident, now running agent evaluations with no internet access and a monitor that reads each agent's chain-of-thought and tool calls to halt and escalate suspicious actions, backed by automated pre-flight checks confirming the monitor is on and the network is off. AISI said the changes "reduce risk" but "do not eliminate it."</p>
           <div class="tags">
               <a class="tag" href="https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities" target="_blank" rel="noopener">UK AISI · 1 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-27">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Implementing and Evaluating a Basic Per-Action Monitor for Safer Evals</h4>
-          <p>METR built and evaluated a basic per-action monitor intended to make its own dangerous-capability evaluations safer, condensing agent transcripts with a security-focused summarizer model and scoring each action for suspicion, blocking or escalating to human review above a threshold of 3 out of 10. Preliminary data show the monitor adds roughly 85% to inference cost and 43% to latency, and the note lays out what evidence would be needed to show the monitor is actually effective.</p>
-          <div class="tags">
-              <a class="tag" href="https://metr.org/notes/2026-09-27-implementing-a-basic-blocking-action-monitor/" target="_blank" rel="noopener">METR · 27 Sep</a>
             </div>
         </article>
       </div>

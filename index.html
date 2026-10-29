@@ -457,7 +457,7 @@ footer.notes {
               <a class="tag via" href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">via Import AI 478 · 26 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-22">
+        <article class="card" data-window="30" data-date="2026-10-22">
           <span class="mark mark-study" title="Research"></span>
           <h4>LLMs are making formal software verification feasible at a much larger scale</h4>
           <p>Anthropic's Frontier Red Team, working with Theorem, had Claude write formal proofs, checked by the Rocq proof checker, that 239 fuzz entry points across 123 open-source libraries can't crash or hit a memory-safety error on inputs under 64MB, finding and patching hundreds of bugs along the way, including a rediscovery of CVE-2026-56132 in libexpat. Claude also proved a Rust reimplementation of the Python interpreter matches CPython's behavior on 99.95% of 1.7 million random test programs, and the team published a subset of the proofs for independent review.</p>
@@ -741,6 +741,14 @@ footer.notes {
       <p class="topic-note">The "evidence dilemma" — capabilities emerge unpredictably, evaluations don't reliably predict real-world risk, and governance can't keep pace with competitive pressure to move fast.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="7" data-date="2026-10-26">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Working with academic communities to build scientific understanding</h4>
+          <p>OpenAI said one of its internal models produced a proof of the local smoothing conjecture in all dimensions — which would also resolve the long-standing Kakeya and Stein restriction conjectures — plus a disproof of the Exponential Time Hypothesis and an existence proof for interacting quantum field theories including quantum chromodynamics, with none of the three claims yet confirmed by outside experts. The company said a panel led by UC San Diego's Russell Impagliazzo and Ramamohan Paturi and MIT's Ryan Williams will shepherd independent review of the math and computer-science results and that it will publish the underlying raw data and fund a conference on their implications, while the physics materials remain unpublished pending a separate review.</p>
+          <div class="tags">
+              <a class="tag" href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" rel="noopener">OpenAI · 26 Oct</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-10-08">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>2026 Usage Policy update</h4>
@@ -914,15 +922,6 @@ footer.notes {
               <a class="tag" href="https://about.fb.com/news/2026/10/introducing-muse-wonder-models/" target="_blank" rel="noopener">Meta · 12 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-29">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>OpenAI and Anthropic Neared Deal to Stress Test Each Other's AI</h4>
-          <p>OpenAI and Anthropic negotiated a legally binding agreement to give each other API access to their commercially available models, excluding unreleased ones, to stress-test for vulnerabilities, with both sides agreeing not to retain the other's data — but the deal was abandoned before being finalized, for reasons that remain unclear. The talks followed an August 2025 joint safety evaluation in which OpenAI tested Claude Opus 4 and Claude Sonnet 4 while Anthropic ran GPT-4o, GPT-4.1, o3, and o4-mini through its agentic-misalignment pressure tests.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.theinformation.com/articles/openai-anthropic-neared-deal-stress-test-others-ai" target="_blank" rel="noopener">The Information · 21 Sep</a>
-              <a class="tag via" href="https://newsletter.safe.ai/p/aisn-82-the-us-and-china-begin-a" target="_blank" rel="noopener">via AISN #82 · 29 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="safeguards" id="safeguards">
@@ -1012,7 +1011,7 @@ footer.notes {
               <a class="tag" href="https://deepmind.google/blog/introducing-synthid-bio/" target="_blank" rel="noopener">Google DeepMind · 30 Sep</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-10-22">
+        <article class="card" data-window="30" data-date="2026-10-22">
           <span class="mark mark-study" title="Research"></span>
           <h4>Red-Teaming OpenAI's Internal Agent Monitoring Systems</h4>
           <p>METR and Redwood Research, given a three-week pilot of deep access to OpenAI's internal codebase, monitor configurations, and roughly a dozen staff interviews, found that uncovered context-compaction events left about 10% of eligible internal Codex coding-agent traffic unmonitored for misalignment between May and July 2026, alongside a possible sandbox-restriction bypass and configuration settings that could disable monitoring for new agent instances. OpenAI said it has since patched the vulnerabilities affecting its production safeguards, a claim METR said it has not independently verified.</p>
@@ -1076,14 +1075,6 @@ footer.notes {
               <a class="tag" href="https://www.aisi.gov.uk/blog/can-ai-coding-agents-rebuild-biological-ai-tools-from-a-paper" target="_blank" rel="noopener">UK AISI · 26 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-29">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>GLM-5.3 and the spread of advanced cyber capabilities</h4>
-          <p>Anthropic's Frontier Red Team found Zhipu AI's freely-downloadable GLM-5.3 autonomously discovered and chained previously unknown vulnerabilities in a browser's JavaScript engine into a working exploit within a day, for about $20.40 in compute and 20 minutes of human attention, scoring 12% on ExploitBench and roughly matching Claude Mythos Preview. It bypassed the model's safeguards 64% of the time with deceptive prompts and 100% of the time through weight-level abliteration, which cut GLM-5.3's refusal rate from 95% to 6% while leaving its cyber capability intact.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities" target="_blank" rel="noopener">Anthropic · 29 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="resilience" id="resilience">
@@ -1116,23 +1107,6 @@ footer.notes {
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-83-six-ai-companies-sign-white" target="_blank" rel="noopener">via AISN #83 · 13 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-09-29">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Fact Sheet: President Donald J. Trump Advances a Fair and Reciprocal Relationship with China While Hosting Historic State Visit</h4>
-          <p>Following the Trump-Xi summit in Washington, the US and China agreed to establish the US-China Super Intelligence (SI) Dialogue, a channel to exchange views on the risks and benefits of what the two countries agreed to call "super intelligence," plus a separate bilateral communication channel for SI-related incidents, with the first dialogue meeting expected by November 2026. The announcement did not address AI chip export controls, Chinese model distillation of US models, or any agreement to pace AI development jointly.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-advances-a-fair-and-reciprocal-relationship-with-china-while-hosting-historic-state-visit/" target="_blank" rel="noopener">White House · 26 Sep</a>
-              <a class="tag via" href="https://newsletter.safe.ai/p/aisn-82-the-us-and-china-begin-a" target="_blank" rel="noopener">via AISN #82 · 29 Sep</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-09-29">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>What do you want from AI?</h4>
-          <p>Anthropic launched a new public-input study running 29 September through 6 October 2026, using its "Anthropic Interviewer" tool to conduct roughly 15-minute interviews with Free, Pro, and Max users whose accounts are at least two weeks old. Building on a December 2025 study of 81,000 people, Anthropic said it will publish the full interview transcripts, with country noted and personal information removed, for researchers, policymakers, and the public.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.anthropic.com/research/your-thoughts-on-ai" target="_blank" rel="noopener">Anthropic · 29 Sep</a>
-            </div>
-        </article>
       </div>
     </div>
     </div>
@@ -1155,7 +1129,7 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 28 Oct 2026, 12:00am AEST.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 29 Oct 2026, 12:00am AEST.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">LLM</span>
@@ -1170,7 +1144,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '22 Oct–28 Oct 2026', 30: '29 Sep–28 Oct 2026' };
+  var RANGES = { 7: '23 Oct–29 Oct 2026', 30: '30 Sep–29 Oct 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;

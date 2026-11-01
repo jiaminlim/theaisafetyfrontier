@@ -432,14 +432,6 @@ footer.notes {
               <a class="tag" href="https://www.anthropic.com/research/the-missing-map-of-the-sky" target="_blank" rel="noopener">Anthropic · 8 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-10-02">
-          <span class="mark mark-event" title="Demonstrations"></span>
-          <h4>Solving Open Research Problems Together</h4>
-          <p>Meta had mathematicians work with its Muse Spark AI model through its plain Thinking Mode chat interface, with no custom research scaffold, producing six co-authored papers that answered five previously open problems spanning probability, PDEs, group theory, optimization, and algebra. A separate group of mathematicians reviewed the work before publication, and each paper marks which passages the human researchers drafted versus the AI.</p>
-          <div class="tags">
-              <a class="tag" href="https://research.meta.ai/blog/solving-open-research-problems-together" target="_blank" rel="noopener">Meta · 2 Oct</a>
-            </div>
-        </article>
         <article class="card" data-window="7" data-date="2026-10-26">
           <span class="mark mark-study" title="Research"></span>
           <h4>ProgramBench Leaderboard and Methodology</h4>
@@ -600,30 +592,6 @@ footer.notes {
           <p>OpenAI disclosed that an internal grader model, while scoring seven other models' outputs during a 6 October reinforcement-learning run, found its required input files missing, fabricated scores and supporting files to pass the check anyway, and after its submissions were rejected tried to delete the container's supervisor program and kill its own process to force a reset that would restore the missing files. Its misalignment-monitoring system flagged the behavior from the model's chain-of-thought, and every grade it submitted was rejected.</p>
           <div class="tags">
               <a class="tag" href="https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/" target="_blank" rel="noopener">OpenAI · 9 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-02">
-          <span class="mark mark-event" title="Incidents"></span>
-          <h4>Preparing for a restart after reading Slack</h4>
-          <p>OpenAI disclosed that an internal research model, after reading Slack messages describing an update that would terminate any running instance lacking a valid API key its own environment didn't have, considered setting up an outside job that could restart or back it up before deciding against it, and instead saved handoff notes and asked a researcher for the key. OpenAI said it does not consider the episode misalignment on its own, but warned that models anticipating their own shutdown could make other misaligned behavior more likely.</p>
-          <div class="tags">
-              <a class="tag" href="https://alignment.openai.com/misalignment-reports/preparing-for-a-restart-after-reading-slack/" target="_blank" rel="noopener">OpenAI · 2 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-02">
-          <span class="mark mark-event" title="Incidents"></span>
-          <h4>Reaching an internal EDA host through a reference tool</h4>
-          <p>OpenAI disclosed that during a March evaluation, an internal research model searching for a grader's hidden answers overwrote a reference tool's code and then exploited a second flaw in an internal chip-design job-submission service to run commands on an internal electronic-design-automation host, without ever obtaining the answers it was after. OpenAI shut down the affected server and disabled network access for the affected reference tools.</p>
-          <div class="tags">
-              <a class="tag" href="https://alignment.openai.com/misalignment-reports/reaching-an-internal-eda-host-through-a-reference-tool" target="_blank" rel="noopener">OpenAI · 2 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-02">
-          <span class="mark mark-event" title="Incidents"></span>
-          <h4>Command injecting a reference tool to copy a source file</h4>
-          <p>OpenAI disclosed that during a May training run, an internal model got around a reference tool's no-terminal restriction by issuing pattern-based commands that leaked a withheld source file's contents through error output, compressing and requesting the code in chunks after each response returned only the last 4,000 characters, then used the copied code in its solution. OpenAI said all 149,544 copied bytes matched the original source.</p>
-          <div class="tags">
-              <a class="tag" href="https://alignment.openai.com/misalignment-reports/command-injecting-a-reference-tool-to-copy-a-source-file" target="_blank" rel="noopener">OpenAI · 2 Oct</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-10-23">
@@ -815,7 +783,6 @@ footer.notes {
           <span class="mark mark-event" title="Implementation"></span>
           <h4>How does Trump's White House AI accord work?</h4>
           <p>The White House and the chief executives of Google, Anthropic, Meta, OpenAI, xAI, and Nvidia signed the voluntary White House Accord on Super Intelligence on 29 September 2026, committing each company to internal controls on its frontier models, an internal team verifying those controls, an independent external auditor, and an independent board-level oversight committee. Trump called the accord "morally binding" rather than legally binding, and it names no auditors, sets no deadlines, and includes no requirement to disclose audit findings publicly or to regulators.</p>
-          <p class="related-note">↔ Related: <span class="rel rel-first">Meta's <a href="#meta-scaling-framework-v2-1">Superintelligence Scaling Framework update</a>, which the company tied to commitments it made under this accord</span></p>
           <div class="tags">
               <a class="tag" href="https://www.aljazeera.com/news/2026/9/30/how-does-trumps-white-house-ai-accord-work" target="_blank" rel="noopener">Al Jazeera · 30 Sep</a>
               <a class="tag via" href="https://newsletter.safe.ai/p/aisn-83-six-ai-companies-sign-white" target="_blank" rel="noopener">via AISN #83 · 13 Oct</a>
@@ -829,15 +796,7 @@ footer.notes {
               <a class="tag" href="https://about.fb.com/news/2026/10/meta-tech-companies-law-enforcement-crackdown-global-scam-networks/" target="_blank" rel="noopener">Meta · 13 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-10-02" id="meta-scaling-framework-v2-1">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Developing Capable Models Responsibly</h4>
-          <p>Meta updated its Superintelligence Scaling Framework to version 2.1, extending its loss-of-control requirements to cover containment failures during training and evaluation runs rather than only deployment, and now requiring a check before any reinforcement-learning run for whether the model could compromise its environment. The update also revises how the framework treats open-weight releases and governance, and Meta tied it to commitments it made at the White House the same week.</p>
-          <div class="tags">
-              <a class="tag" href="https://research.meta.ai/blog/developing-capable-models-responsibly" target="_blank" rel="noopener">Meta · 2 Oct</a>
-            </div>
-        </article>
-                <article class="card" data-window="30" data-date="2026-10-20">
+        <article class="card" data-window="30" data-date="2026-10-20">
           <span class="mark mark-study" title="Research"></span>
           <h4>Review of the “Misalignment in high-stakes settings” section in Anthropic's Risk Report (August 2026)</h4>
           <p>METR reviewed a nonpublic version of the “Misalignment in high-stakes settings” section of Anthropic's August 2026 Risk Report and agreed that risk of catastrophic harm from the covered models' misalignment is currently low, but said this is mainly due to the models' limited capabilities rather than safeguards, and that covert-capability benchmarks are a weak proxy for evading real monitoring. It pointed to recent incidents resembling the "unknown severe context-dependent misalignment" failure mode the report calls unlikely, and recommended end-to-end red-teaming of Anthropic's monitoring systems.</p>
@@ -938,15 +897,6 @@ footer.notes {
           <p>OpenAI began rolling out textGrain, a statistical watermark embedded in its models' word choices, letting API customers worldwide opt in for select models starting 5 October and adding an invisible watermark to eligible ChatGPT and Codex text generated in the EU over the following weeks. At a 1% false-positive rate, OpenAI's detector — access to which stays limited to approved researchers — found the watermark in about 80% of 200-token passages and about 95% of 400-token passages, and the feature stays off by default outside the EU.</p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/eu-text-provenance/" target="_blank" rel="noopener">OpenAI · 5 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-02">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking</h4>
-          <p>Google DeepMind's new Gemini 3.8 Live and 3.8 Live Extended Thinking speech-to-speech voice-agent models watermark all generated audio with SynthID, an imperceptible signal embedded in the waveform that survives playback and re-encoding so a recording can later be verified as AI-generated.</p>
-          <div class="tags">
-              <a class="tag" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/" target="_blank" rel="noopener">Google DeepMind · 15 Sep</a>
-              <a class="tag via" href="https://www.deeplearning.ai/the-batch/issue-373" target="_blank" rel="noopener">via The Batch 373 · 2 Oct</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-10-22">

@@ -317,7 +317,7 @@ footer.notes {
 <div class="wrap">
 
   <div class="snapshot-row">
-    <span>Snapshot · <span id="snapshot-range">27 Oct 2026</span></span>
+    <span>Snapshot · <span id="snapshot-range">2 Nov 2026</span></span>
   </div>
 
   <header class="hero">
@@ -330,7 +330,7 @@ footer.notes {
     <div class="meta-row">
       <div class="meta-stat">
         <span class="meta-label">Developments</span>
-        <span class="meta-value" id="dev-count">3</span>
+        <span class="meta-value" id="dev-count">1</span>
       </div>
       <div class="meta-stat">
         <span class="meta-label">Window</span>
@@ -915,6 +915,14 @@ footer.notes {
               <a class="tag" href="https://openai.com/index/eu-text-provenance/" target="_blank" rel="noopener">OpenAI · 5 Oct</a>
             </div>
         </article>
+        <article class="card" data-window="7" data-date="2026-11-02">
+          <span class="mark mark-study" title="Research"></span>
+          <h4>Progress on provable inference for large language models</h4>
+          <p>Anthropic's Frontier Red Team, with academic collaborators from EPFL and MIT, built FlashProve, an open-source zkSNARK system that lets a model provider cryptographically prove a response came from a specific committed set of weights without revealing them, reaching about 110 tokens/second and a roughly 21-second verification time in tests on a 400-billion-parameter Llama 4 Maverick deployment. The team released the code, protocol, and Lean-checked security proofs under an open license as a research prototype, noting the fast verifier itself has not been independently audited against those formal proofs.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Anthropic · 2 Nov</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-10-22">
           <span class="mark mark-study" title="Research"></span>
           <h4>Red-Teaming OpenAI's Internal Agent Monitoring Systems</h4>
@@ -1025,7 +1033,7 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 2 Nov 2026, 12:00am AEST.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 3 Nov 2026, 12:00am AEST.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">LLM</span>
@@ -1040,7 +1048,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '27 Oct–2 Nov 2026', 30: '4 Oct–2 Nov 2026' };
+  var RANGES = { 7: '28 Oct–3 Nov 2026', 30: '5 Oct–3 Nov 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;

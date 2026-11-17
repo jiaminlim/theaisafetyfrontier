@@ -551,7 +551,7 @@ footer.notes {
       <p class="topic-note">Risks from AI's spread across society and the economy — power concentration, privacy, labour, autonomy.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-11-10">
+        <article class="card" data-window="30" data-date="2026-11-10">
           <span class="mark mark-study" title="Research"></span>
           <h4>Work at the Frontier: AI's effect on freelance work</h4>
           <p>OpenAI and Upwork found that, across 63 freelance work categories, AI-related fixed-price project postings carried budgets 52.4% higher than comparable non-AI postings even though advertised hourly rates differed by only 1.5%, and that AI-related postings' task-mix diversity rose about 45%, with 43 of the 63 categories shifting posting share away from tasks commonly performed by ChatGPT toward less-common ones.</p>
@@ -612,12 +612,21 @@ footer.notes {
       <p class="topic-note">Defense-in-depth strategies, frontier safety frameworks, red-teaming, safety evaluations.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="30" data-date="2026-11-05">
+        <article class="card" data-window="7" data-date="2026-11-16">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Updating our coordinated vulnerability disclosure policy timelines</h4>
+          <p>Anthropic's Frontier Red Team shortened its coordinated vulnerability disclosure timelines for reports made from 1 January 2027 onward, citing frontier models' growing ability to find bugs. The disclosure window drops from 90 to 30 days for high- and critical-severity issues and to 45 days for others, the wait before escalating to an external coordinator falls from 30 to 15 days of maintainer silence, and the post-patch technical-detail wait falls from 45 to 30 days.</p>
+          <div class="tags">
+              <a class="tag" href="https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines" target="_blank" rel="noopener">Anthropic · 16 Nov</a>
+            </div>
+        </article>
+        <article class="card" data-window="7" data-date="2026-11-13">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>GPT-6 Cyber: Advancing the frontier of aligned cybersecurity agents</h4>
-          <p>OpenAI released GPT-6 Cyber, a cybersecurity-tuned model that it said generated working exploits for 948 of the 1,724 Linux kernel vulnerabilities it reproduced in a research scan and found 81 previously unknown high-severity vulnerabilities in Mozilla Firefox. It rated the model Critical for cybersecurity under its Preparedness Framework and restricted initial access to a Daybreak Blue tier for verified defenders and a more capable Daybreak Red tier for deeper exploit development.</p>
+          <p>OpenAI released GPT-6 Cyber, a cybersecurity-tuned model that it said generated working exploits for 948 of the 1,724 Linux kernel vulnerabilities it reproduced in a research scan and found 81 previously unknown high-severity vulnerabilities in Mozilla Firefox. It rated the model Critical for cybersecurity under its Preparedness Framework and restricted initial access to a Daybreak Blue tier for verified defenders and a more capable Daybreak Red tier for deeper exploit development. The same research harness produced those exploits for about $1,280 each, versus $3,095 per exploit when its predecessor GPT-5.6 Sol found 166 vulnerabilities for $513,690 in a comparable July run.</p>
           <div class="tags">
               <a class="tag" href="https://openai.com/index/introducing-gpt-6-cyber/" target="_blank" rel="noopener">OpenAI · 5 Nov</a>
+              <a class="tag via" href="https://www.deeplearning.ai/the-batch/gpt-6-cyber-patches-more-security-flaws-for-less-cost" target="_blank" rel="noopener">via The Batch 379 · 13 Nov</a>
             </div>
         </article>
         <article class="card" data-window="30" data-date="2026-10-23">
@@ -660,6 +669,14 @@ footer.notes {
       <p class="topic-note">Pre- and post-deployment protections — safety guardrails, safety post-training, watermarking.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
+        <article class="card" data-window="30" data-date="2026-11-10">
+          <span class="mark mark-event" title="Implementation"></span>
+          <h4>Gemini Robotics 2.5: Accelerating Physical Intelligence</h4>
+          <p>Google DeepMind rolled out Gemini Robotics 2.5 to robotics partners with reasoning-based safety guidance that steers around physical hazards in real time, raising safe task completion by 33% near obstacles and 43% when people are nearby. It also released an open ASIMOV-Jailbreak benchmark testing resistance to disguised unsafe instructions, on which its Gemini 4 Argon model scored 99.5% jailbreak resistance versus 82% for the prior Gemini Robotics ER 2 baseline.</p>
+          <div class="tags">
+              <a class="tag" href="https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/" target="_blank" rel="noopener">Google DeepMind · 10 Nov</a>
+            </div>
+        </article>
         <article class="card" data-window="30" data-date="2026-11-09">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Expanding Teen Account Protections to Teens Around the World</h4>
@@ -668,7 +685,7 @@ footer.notes {
               <a class="tag" href="https://about.fb.com/news/2026/11/expanding-teen-account-protections-to-teens-around-the-world/" target="_blank" rel="noopener">Meta · 9 Nov</a>
             </div>
         </article>
-        <article class="card" data-window="7" data-date="2026-11-10">
+        <article class="card" data-window="30" data-date="2026-11-10">
           <span class="mark mark-study" title="Research"></span>
           <h4>What affects chain-of-thought monitorability across the model lifecycle?</h4>
           <p>OpenAI found that a model's ability to reason without producing chain-of-thought tokens tracks closely with its base model's perplexity, and that reasoning-trace controllability — the ability to follow instructions that alter a model's chain of thought — falls as post-training and test-time compute increase even though it rises with model size. It also found that reinforcement learning at current frontier scales does not materially degrade chain-of-thought monitorability, and that monitors able to inspect the full chain of thought remain substantially more informative than monitors limited to final actions alone.</p>
@@ -723,20 +740,12 @@ footer.notes {
       <p class="topic-note">Institutional capacity, education, and cross-sector efforts to absorb AI's effects.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-11-10">
+        <article class="card" data-window="30" data-date="2026-11-10">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>AISN #85: US Midterms Favor Candidates Backing AI Regulation</h4>
           <p>The Center for AI Safety's newsletter found the 2026 midterms favored AI-regulation-friendly candidates, with Democratic super PAC Tomorrow Together winning all six races it targeted — four House seats where it spent about $4 million, plus two Senate seats where it added a further $2.5 million — against Republicans who had voted to preempt state AI regulation. Separately, voters in ten states decided 41 local data-center ballot measures on 3 November, and 40 of them favored new restrictions or rejected proposed developments.</p>
           <div class="tags">
               <a class="tag" href="https://newsletter.safe.ai/p/aisn-85-us-midterms-favor-candidates" target="_blank" rel="noopener">AISN #85 · 10 Nov</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-18">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Investing in the public benefit</h4>
-          <p>Anthropic said it will commit 5% of its shares — subject to stockholder approval, with up to 2% more at the board's discretion for every 50% rise in company value above a set baseline — to a new, wholly-owned Anthropic Public Benefit Fund that won't fund lobbying or political giving. The company named AI-driven instability for workers as one issue the Fund could address, alongside its existing $200 million commitment on that front.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.anthropic.com/news/public-benefit-fund" target="_blank" rel="noopener">Anthropic · 18 Oct</a>
             </div>
         </article>
       </div>
@@ -761,7 +770,7 @@ footer.notes {
     </div>
     <div class="notes-row">
       <span class="notes-label">Refresh</span>
-      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 16 Nov 2026, 12:00am AEST.</p>
+      <p class="notes-text">Refresh happens at midnight AEST daily — last updated 17 Nov 2026, 12:00am AEST.</p>
     </div>
     <div class="notes-row">
       <span class="notes-label">LLM</span>
@@ -776,7 +785,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '10 Nov–16 Nov 2026', 30: '18 Oct–16 Nov 2026' };
+  var RANGES = { 7: '11 Nov–17 Nov 2026', 30: '19 Oct–17 Nov 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;

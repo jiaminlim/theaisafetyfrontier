@@ -490,14 +490,6 @@ footer.notes {
               <a class="tag via" href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">via Import AI 478 · 26 Oct</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-10-22">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>LLMs are making formal software verification feasible at a much larger scale</h4>
-          <p>Anthropic's Frontier Red Team, working with Theorem, had Claude write formal proofs, checked by the Rocq proof checker, that 239 fuzz entry points across 123 open-source libraries can't crash or hit a memory-safety error on inputs under 64MB, finding and patching hundreds of bugs along the way, including a rediscovery of CVE-2026-56132 in libexpat. Claude also proved a Rust reimplementation of the Python interpreter matches CPython's behavior on 99.95% of 1.7 million random test programs, and the team published a subset of the proofs for independent review.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.anthropic.com/research/formal-verification" target="_blank" rel="noopener">Anthropic · 22 Oct</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="rsi" id="rsi">
@@ -756,14 +748,6 @@ footer.notes {
           <p>Anthropic's Frontier Red Team, with academic collaborators from EPFL and MIT, built FlashProve, an open-source zkSNARK system that lets a model provider cryptographically prove a response came from a specific committed set of weights without revealing them, reaching about 110 tokens/second and a roughly 21-second verification time in tests on a 400-billion-parameter Llama 4 Maverick deployment. The team released the code, protocol, and Lean-checked security proofs under an open license as a research prototype, noting the fast verifier itself has not been independently audited against those formal proofs.</p>
           <div class="tags">
               <a class="tag" href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Anthropic · 2 Nov</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-22">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Red-Teaming OpenAI's Internal Agent Monitoring Systems</h4>
-          <p>METR and Redwood Research, given a three-week pilot of deep access to OpenAI's internal codebase, monitor configurations, and roughly a dozen staff interviews, found that uncovered context-compaction events left about 10% of eligible internal Codex coding-agent traffic unmonitored for misalignment between May and July 2026, alongside a possible sandbox-restriction bypass and configuration settings that could disable monitoring for new agent instances. OpenAI said it has since patched the vulnerabilities affecting its production safeguards, a claim METR said it has not independently verified.</p>
-          <div class="tags">
-              <a class="tag" href="https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/" target="_blank" rel="noopener">METR · 22 Oct</a>
             </div>
         </article>
       </div>

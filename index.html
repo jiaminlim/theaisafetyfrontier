@@ -498,15 +498,6 @@ footer.notes {
               <a class="tag" href="https://www.anthropic.com/research/components-of-agent-memory" target="_blank" rel="noopener">Anthropic · 6 Nov</a>
             </div>
         </article>
-        <article class="card" data-window="30" data-date="2026-10-26">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>ProgramBench Leaderboard and Methodology</h4>
-          <p>Claude Opus 5.5 (xhigh) scored 18.5% on ProgramBench, a software-reconstruction-from-binary benchmark on which every tested model scored 0% at its May 2026 launch, according to Vals AI's independent leaderboard. ProgramBench co-author Ofir Press said Anthropic's own much higher self-reported figures (70.5–91.2%) likely come from a 166-of-200 program subset that excludes the hardest targets and from a different, more lenient scoring metric.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.vals.ai/benchmarks/programbench" target="_blank" rel="noopener">Vals AI · 12 Oct</a>
-              <a class="tag via" href="https://jack-clark.net/2026/10/26/import-ai-478-math-for-alignment-programbench-and-mirendil-shows-what-rsi-means/" target="_blank" rel="noopener">via Import AI 478 · 26 Oct</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="rsi" id="rsi">
@@ -621,14 +612,6 @@ footer.notes {
       <p class="topic-note">The "evidence dilemma" — capabilities emerge unpredictably, evaluations don't reliably predict real-world risk, and governance can't keep pace with competitive pressure to move fast.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="30" data-date="2026-10-26">
-          <span class="mark mark-event" title="Implementation"></span>
-          <h4>Working with academic communities to build scientific understanding</h4>
-          <p>OpenAI said one of its internal models produced a proof of the local smoothing conjecture in all dimensions — which would also resolve the long-standing Kakeya and Stein restriction conjectures — plus a disproof of the Exponential Time Hypothesis and an existence proof for interacting quantum field theories including quantum chromodynamics, with none of the three claims yet confirmed by outside experts. The company said a panel led by UC San Diego's Russell Impagliazzo and Ramamohan Paturi and MIT's Ryan Williams will shepherd independent review of the math and computer-science results and that it will publish the underlying raw data and fund a conference on their implications, while the physics materials remain unpublished pending a separate review.</p>
-          <div class="tags">
-              <a class="tag" href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" rel="noopener">OpenAI · 26 Oct</a>
-            </div>
-        </article>
         <article class="card" data-window="30" data-date="2026-10-27">
           <span class="mark mark-study" title="Research"></span>
           <h4>How AI agents shape experts' judgment calls</h4>
@@ -644,7 +627,7 @@ footer.notes {
       <p class="topic-note">Defense-in-depth strategies, frontier safety frameworks, red-teaming, safety evaluations.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="7" data-date="2026-11-18">
+        <article class="card" data-window="30" data-date="2026-11-18">
           <span class="mark mark-event" title="Implementation"></span>
           <h4>Managing frontier AI risk: From training to deployment</h4>
           <p>OpenAI published a three-stage framework — research, internal deployment, and external deployment — that requires a safety review before a frontier model advances to the next stage, continuously monitors every frontier inference for misaligned behavior during internal deployment, and commits to publishing findings through system cards, incident reports, internal-deployment risk reports, and external evaluations.</p>
@@ -765,22 +748,6 @@ footer.notes {
       <p class="topic-note">The tension between open research access and safeguards that can be stripped out once weights are public.</p>
       <div class="grid">
         <p class="empty-note" data-empty-placeholder>Nothing here this window.</p>
-        <article class="card" data-window="30" data-date="2026-10-26">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Pretraining data filtering in open-weight biological models</h4>
-          <p>The UK AI Security Institute trained open-weight ESM-2 protein language models from scratch, from 8 million to 3 billion parameters, with viral protein sequences stripped from the pretraining data, and found the filtering suppressed viral-sequence prediction capability while leaving performance on non-viral proteins largely intact. Fine-tuning on the withheld viral sequences fully restored the stripped capability even in the largest model tested, for roughly $80 of compute, leading AISI to conclude pretraining filtering is an effective, selective safeguard but not durable against adversarial fine-tuning.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.aisi.gov.uk/blog/pretraining-data-filtering-in-open-weight-biological-models" target="_blank" rel="noopener">UK AISI · 26 Oct</a>
-            </div>
-        </article>
-        <article class="card" data-window="30" data-date="2026-10-26">
-          <span class="mark mark-study" title="Research"></span>
-          <h4>Can AI coding agents rebuild biological AI tools from a paper?</h4>
-          <p>UK AISI and SecureBio's ReproBAIT evaluation had coding agents reimplement three biological AI tools from a published paper alone, with training data, a single GPU and no internet access, then scored the rebuilt tools against the originals' benchmarks. Agents reproduced the protein-design tool ProteinMPNN to within about 96.5% of its original score but could not reproduce the newer RFdiffusion3's tested function, and AISI concluded that withholding code does not by itself make a biological AI tool's release safe.</p>
-          <div class="tags">
-              <a class="tag" href="https://www.aisi.gov.uk/blog/can-ai-coding-agents-rebuild-biological-ai-tools-from-a-paper" target="_blank" rel="noopener">UK AISI · 26 Oct</a>
-            </div>
-        </article>
       </div>
     </div>
     <div class="topic" data-nav="resilience" id="resilience">
@@ -833,7 +800,7 @@ footer.notes {
 </div>
 
 <script>
-  var RANGES = { 7: '18 Nov–24 Nov 2026', 30: '26 Oct–24 Nov 2026' };
+  var RANGES = { 7: '19 Nov–25 Nov 2026', 30: '27 Oct–25 Nov 2026' };
   var MONTH_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var currentDays = 7;
   var currentSourceKey = null;
